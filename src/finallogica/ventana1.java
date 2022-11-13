@@ -5,6 +5,7 @@
 
 package finallogica;
 
+import com.sun.jdi.connect.Connector;
 import javax.swing.JOptionPane;
 /**
  *
@@ -14,6 +15,7 @@ import javax.swing.JOptionPane;
 public class ventana1 extends javax.swing.JFrame {
 
     /** Creates new form ventana1 */
+    public static String comboCiudad ="";
     public ventana1() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -23,6 +25,7 @@ public class ventana1 extends javax.swing.JFrame {
         placeHolder = new TextPrompt("CÉDULA", campoCédula);
 //        placeHolder = new TextPrompt("EDAD", jComboBox1);
         placeHolder = new TextPrompt("DIRECCIÓN", campoDirección);
+       
     }
 
     /** This method is called from within the constructor to
@@ -44,7 +47,7 @@ public class ventana1 extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         campoCédula = new javax.swing.JTextField();
         campoDirección = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        JComboCiudad = new javax.swing.JComboBox<>();
         botonContinuar = new javax.swing.JButton();
         campoEdad = new javax.swing.JComboBox<>();
 
@@ -70,7 +73,7 @@ public class ventana1 extends javax.swing.JFrame {
             dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(dashboardLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(icon, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                .addComponent(icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGap(19, 19, 19))
         );
 
@@ -123,8 +126,13 @@ public class ventana1 extends javax.swing.JFrame {
         campoDirección.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         campoDirección.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        jComboBox1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medellín", "Barranquilla", "Bogotá" }));
+        JComboCiudad.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        JComboCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medellín", "Barranquilla", "Bogotá" }));
+        JComboCiudad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JComboCiudadActionPerformed(evt);
+            }
+        });
 
         botonContinuar.setBackground(new java.awt.Color(49, 152, 255));
         botonContinuar.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
@@ -159,7 +167,7 @@ public class ventana1 extends javax.swing.JFrame {
                                         .addGap(40, 40, 40)
                                         .addComponent(campoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JComboCiudad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(campoDirección, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addContainerGap())
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
@@ -192,7 +200,7 @@ public class ventana1 extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(campoDirección, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(JComboCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(botonContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(54, Short.MAX_VALUE))
@@ -209,7 +217,7 @@ public class ventana1 extends javax.swing.JFrame {
             fondoNegroLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fondoNegroLayout.createSequentialGroup()
                 .addComponent(dashboard, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(13, 13, 13)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -241,11 +249,13 @@ public class ventana1 extends javax.swing.JFrame {
 
     private void botonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarActionPerformed
         // TODO add your handling code here:
+        //esta instruccion asigna a la variable global comboCiudad lo que hay seleccioando en el combo ciudad
+          comboCiudad = JComboCiudad.getSelectedItem().toString();
         
         if(campoNombre.getText().isEmpty()==false
                 && campoApellidos.getText().isEmpty()==false
                 && campoCédula.getText().isEmpty()==false
-                //&& campoEdad.getText().isEmpty()==false
+                && campoEdad.getSelectedItem().toString() != "EDAD" 
                 && campoDirección.getText().isEmpty()==false){
             ventana2 vent2 = new ventana2();
             vent2.setDato(campoNombre.getText());
@@ -256,7 +266,7 @@ public class ventana1 extends javax.swing.JFrame {
         else
              JOptionPane.showMessageDialog(null, "Revise que todos los campos de datos esten completos\n");
         
-        
+       
     }//GEN-LAST:event_botonContinuarActionPerformed
 
     private void campoCédulaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoCédulaKeyTyped
@@ -313,6 +323,11 @@ public class ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoEdadActionPerformed
 
+    private void JComboCiudadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JComboCiudadActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_JComboCiudadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -349,6 +364,7 @@ public class ventana1 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> JComboCiudad;
     private javax.swing.JButton botonContinuar;
     private javax.swing.JTextField campoApellidos;
     private javax.swing.JTextField campoCédula;
@@ -358,7 +374,6 @@ public class ventana1 extends javax.swing.JFrame {
     private javax.swing.JPanel dashboard;
     private javax.swing.JPanel fondoNegro;
     private javax.swing.JLabel icon;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField jTextField1;

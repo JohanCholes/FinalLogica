@@ -4,6 +4,10 @@
  */
 package finallogica;
 
+import javax.swing.JPanel;
+
+
+
 /**
  *
  * @author Johan Choles
@@ -18,16 +22,29 @@ public class ventana2 extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         
-        //iniciar con ventana medellin
-        medellin p1 = new medellin();
-        p1.setSize(848,430);
+        //iniciar con ventana dependiendo de que se selecciono en combobox ciudad
+        if (ventana1.comboCiudad.equals("Medellín")) {
+            medellin p1 = new medellin();
+            cambiarContent(p1);
+        }else if (ventana1.comboCiudad.equals("Barranquilla")) {
+            barranquilla p1 = new barranquilla();
+            cambiarContent(p1);
+        }else if(ventana1.comboCiudad.equals("Bogotá")){
+            Bogotá p1 = new Bogotá();
+            cambiarContent(p1);
+        }
+        
+    }
+    //funcion cambiarContent
+    private void cambiarContent(JPanel p1){
+        p1.setSize(848, 424);
         
         content.removeAll();
         content.add(p1);
         content.revalidate();
         content.repaint();
     }
-    
+            
     public void setDato(String dato){
         this.dato = dato;
         jLabel2.setText("Bienvenido, "+ dato);
@@ -44,10 +61,11 @@ public class ventana2 extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
-        jToggleButton3 = new javax.swing.JToggleButton();
+        TBmedellin = new javax.swing.JToggleButton();
+        TBbarranquilla = new javax.swing.JToggleButton();
+        TBbogotá = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
+        icon = new javax.swing.JLabel();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -56,32 +74,42 @@ public class ventana2 extends javax.swing.JFrame {
 
         jPanel2.setBackground(new java.awt.Color(0, 51, 255));
 
-        jToggleButton1.setBackground(new java.awt.Color(0, 52, 255));
-        jToggleButton1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jToggleButton1.setForeground(new java.awt.Color(255, 255, 51));
-        jToggleButton1.setSelected(true);
-        jToggleButton1.setText("Medellín");
-        jToggleButton1.setBorder(null);
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
+        TBmedellin.setBackground(new java.awt.Color(0, 52, 255));
+        TBmedellin.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        TBmedellin.setForeground(new java.awt.Color(255, 255, 51));
+        TBmedellin.setSelected(true);
+        TBmedellin.setText("Medellín");
+        TBmedellin.setBorder(null);
+        TBmedellin.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
+                TBmedellinActionPerformed(evt);
             }
         });
 
-        jToggleButton2.setBackground(new java.awt.Color(0, 51, 255));
-        jToggleButton2.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jToggleButton2.setForeground(new java.awt.Color(255, 255, 51));
-        jToggleButton2.setText("Barranquilla");
-        jToggleButton2.setToolTipText("");
-        jToggleButton2.setBorder(null);
-        jToggleButton2.setBorderPainted(false);
+        TBbarranquilla.setBackground(new java.awt.Color(0, 51, 255));
+        TBbarranquilla.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        TBbarranquilla.setForeground(new java.awt.Color(255, 255, 51));
+        TBbarranquilla.setText("Barranquilla");
+        TBbarranquilla.setToolTipText("");
+        TBbarranquilla.setBorder(null);
+        TBbarranquilla.setBorderPainted(false);
+        TBbarranquilla.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBbarranquillaActionPerformed(evt);
+            }
+        });
 
-        jToggleButton3.setBackground(new java.awt.Color(0, 51, 255));
-        jToggleButton3.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jToggleButton3.setForeground(new java.awt.Color(255, 255, 51));
-        jToggleButton3.setText("Bogotá");
-        jToggleButton3.setBorder(null);
-        jToggleButton3.setBorderPainted(false);
+        TBbogotá.setBackground(new java.awt.Color(0, 51, 255));
+        TBbogotá.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        TBbogotá.setForeground(new java.awt.Color(255, 255, 51));
+        TBbogotá.setText("Bogotá");
+        TBbogotá.setBorder(null);
+        TBbogotá.setBorderPainted(false);
+        TBbogotá.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TBbogotáActionPerformed(evt);
+            }
+        });
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
@@ -96,36 +124,54 @@ public class ventana2 extends javax.swing.JFrame {
             }
         });
 
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoeste-removebg-preview.png"))); // NOI18N
+        icon.setText("jLabel2");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(587, Short.MAX_VALUE)
-                .addComponent(jToggleButton1)
+                .addGap(15, 15, 15)
+                .addComponent(icon, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(TBmedellin)
                 .addGap(28, 28, 28)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                        .addComponent(jToggleButton2)
+                        .addComponent(TBbarranquilla)
                         .addGap(18, 18, 18)
-                        .addComponent(jToggleButton3)))
+                        .addComponent(TBbogotá)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(20, Short.MAX_VALUE)
+                .addContainerGap(32, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jToggleButton1)
-                    .addComponent(jToggleButton2)
-                    .addComponent(jToggleButton3))
+                    .addComponent(TBmedellin)
+                    .addComponent(TBbarranquilla)
+                    .addComponent(TBbogotá))
                 .addGap(15, 15, 15))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(icon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         content.setBackground(new java.awt.Color(175, 191, 255));
+        content.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                contentAncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         javax.swing.GroupLayout contentLayout = new javax.swing.GroupLayout(content);
         content.setLayout(contentLayout);
@@ -135,7 +181,7 @@ public class ventana2 extends javax.swing.JFrame {
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 430, Short.MAX_VALUE)
+            .addGap(0, 424, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -167,13 +213,44 @@ public class ventana2 extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
+    private void TBmedellinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBmedellinActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
+        TBbarranquilla.setSelected(false);
+        TBbogotá.setSelected(false);
+        
+        //cambiamos segun el content segun tenga el boton seleccionado
+        medellin p1 = new medellin();
+        cambiarContent(p1);
+    }//GEN-LAST:event_TBmedellinActionPerformed
 
     private void jLabel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel2AncestorAdded
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel2AncestorAdded
+
+    private void TBbarranquillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBbarranquillaActionPerformed
+        // TODO add your handling code here:
+        TBmedellin.setSelected(false);
+        TBbogotá.setSelected(false);
+        
+        //cambiamos segun el content segun tenga el boton seleccionado
+        barranquilla p1 = new barranquilla();
+        cambiarContent(p1);
+    }//GEN-LAST:event_TBbarranquillaActionPerformed
+
+    private void TBbogotáActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBbogotáActionPerformed
+        // TODO add your handling code here:
+        TBmedellin.setSelected(false);
+        TBbarranquilla.setSelected(false);
+        
+        //cambiamos segun el content segun tenga el boton seleccionado
+        Bogotá p1 = new Bogotá();
+        cambiarContent(p1);
+    }//GEN-LAST:event_TBbogotáActionPerformed
+
+    private void contentAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_contentAncestorAdded
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_contentAncestorAdded
 
     /**
      * @param args the command line arguments
@@ -211,12 +288,13 @@ public class ventana2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton TBbarranquilla;
+    private javax.swing.JToggleButton TBbogotá;
+    private javax.swing.JToggleButton TBmedellin;
     private javax.swing.JPanel content;
+    private javax.swing.JLabel icon;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
     // End of variables declaration//GEN-END:variables
 }

@@ -4,23 +4,17 @@
  */
 package finallogica;
 
-import java.awt.Image;
-import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-
 /**
  *
  * @author Johan Choles
  */
-public class medellin extends javax.swing.JPanel {
+public class Bogotá extends javax.swing.JPanel {
 
     /**
-     * Creates new form medellin
+     * Creates new form Bogotá
      */
-    public medellin() {
+    public Bogotá() {
         initComponents();
-//        setImageLabel(imgMedellín, "src/imagenes/imagenMedellín.jpg");
     }
 
     /**
@@ -43,9 +37,9 @@ public class medellin extends javax.swing.JPanel {
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 38)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel1.setText("MEDELLÍN");
+        jLabel1.setText("BOGOTÁ");
 
-        imgMedellín.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imagenMedellín.jpg"))); // NOI18N
+        imgMedellín.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgBogotá.jpg"))); // NOI18N
         imgMedellín.setText("imagenMedellín");
         imgMedellín.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
 
@@ -91,14 +85,7 @@ public class medellin extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
     }// </editor-fold>//GEN-END:initComponents
 
-//    private void setImageLabel(JLabel labelName, String root){
-//        ImageIcon image = new ImageIcon(root);
-//        Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-//        labelName.setIcon(icon);
-//        this.repaint();
-//        
-//        
-//    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgMedellín;
     private javax.swing.JLabel jLabel1;
