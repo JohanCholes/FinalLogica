@@ -21,7 +21,7 @@ public class ventana1 extends javax.swing.JFrame {
         placeHolder = new TextPrompt("APELLIDOS", campoApellidos);
         placeHolder = new TextPrompt("CORREO ELECRONICO", jTextField1);
         placeHolder = new TextPrompt("CÉDULA", campoCédula);
-        placeHolder = new TextPrompt("EDAD", campoEdad);
+        //placeHolder = new TextPrompt("EDAD", campoEdad);
         placeHolder = new TextPrompt("DIRECCIÓN", campoDirección);
     }
 
@@ -42,10 +42,10 @@ public class ventana1 extends javax.swing.JFrame {
         campoApellidos = new javax.swing.JTextField();
         jTextField1 = new javax.swing.JTextField();
         campoCédula = new javax.swing.JTextField();
-        campoEdad = new javax.swing.JTextField();
         campoDirección = new javax.swing.JTextField();
         jComboBox1 = new javax.swing.JComboBox<>();
         botonContinuar = new javax.swing.JButton();
+        campoEdad = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -110,19 +110,6 @@ public class ventana1 extends javax.swing.JFrame {
             }
         });
 
-        campoEdad.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        campoEdad.setAutoscrolls(false);
-        campoEdad.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                campoEdadActionPerformed(evt);
-            }
-        });
-        campoEdad.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                campoEdadKeyTyped(evt);
-            }
-        });
-
         campoDirección.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         campoDirección.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
@@ -137,6 +124,10 @@ public class ventana1 extends javax.swing.JFrame {
                 botonContinuarActionPerformed(evt);
             }
         });
+
+        campoEdad.setEditable(true);
+        campoEdad.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
+        campoEdad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EDAD", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122" }));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -163,7 +154,7 @@ public class ventana1 extends javax.swing.JFrame {
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addComponent(campoCédula, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(campoEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addContainerGap()))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -183,7 +174,7 @@ public class ventana1 extends javax.swing.JFrame {
                 .addGap(23, 23, 23)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(campoCédula, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoEdad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(campoEdad))
                 .addGap(18, 18, 18)
                 .addComponent(campoDirección, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -234,17 +225,13 @@ public class ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_campoCédulaActionPerformed
 
-    private void campoEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEdadActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_campoEdadActionPerformed
-
     private void botonContinuarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botonContinuarActionPerformed
         // TODO add your handling code here:
         
         if(campoNombre.getText().isEmpty()==false
                 && campoApellidos.getText().isEmpty()==false
                 && campoCédula.getText().isEmpty()==false
-                && campoEdad.getText().isEmpty()==false
+                //&& campoEdad.getText().isEmpty()==false
                 && campoDirección.getText().isEmpty()==false){
             ventana2 vent2 = new ventana2();
             vent2.setDato(campoNombre.getText());
@@ -277,23 +264,6 @@ public class ventana1 extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_campoCédulaKeyTyped
-
-    private void campoEdadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoEdadKeyTyped
-        // TODO add your handling code here:
-        
-        //codigo para que permita cierta cantidad de numeros
-        int key = evt.getKeyChar();
-        
-        boolean numeros = key >= 48 && key <= 57;
-        
-        if(!numeros){
-            evt.consume();
-        }
-        
-        if((campoEdad.getText().trim().length() >= 3)){
-        evt.consume();
-        }
-    }//GEN-LAST:event_campoEdadKeyTyped
 
     private void campoNombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoNombreKeyTyped
         // TODO add your handling code here:
@@ -365,7 +335,7 @@ public class ventana1 extends javax.swing.JFrame {
     private javax.swing.JTextField campoApellidos;
     private javax.swing.JTextField campoCédula;
     private javax.swing.JTextField campoDirección;
-    private javax.swing.JTextField campoEdad;
+    private javax.swing.JComboBox<String> campoEdad;
     private javax.swing.JTextField campoNombre;
     private javax.swing.JPanel dashboard;
     private javax.swing.JPanel fondoNegro;
