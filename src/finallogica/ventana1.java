@@ -21,7 +21,7 @@ public class ventana1 extends javax.swing.JFrame {
         placeHolder = new TextPrompt("APELLIDOS", campoApellidos);
         placeHolder = new TextPrompt("CORREO ELECRONICO", jTextField1);
         placeHolder = new TextPrompt("CÉDULA", campoCédula);
-        //placeHolder = new TextPrompt("EDAD", campoEdad);
+//        placeHolder = new TextPrompt("EDAD", jComboBox1);
         placeHolder = new TextPrompt("DIRECCIÓN", campoDirección);
     }
 
@@ -36,6 +36,7 @@ public class ventana1 extends javax.swing.JFrame {
 
         fondoNegro = new javax.swing.JPanel();
         dashboard = new javax.swing.JPanel();
+        icon = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         campoNombre = new javax.swing.JTextField();
@@ -53,15 +54,24 @@ public class ventana1 extends javax.swing.JFrame {
 
         dashboard.setBackground(new java.awt.Color(0, 51, 255));
 
+        icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoeste-removebg-preview.png"))); // NOI18N
+        icon.setText("jLabel2");
+
         javax.swing.GroupLayout dashboardLayout = new javax.swing.GroupLayout(dashboard);
         dashboard.setLayout(dashboardLayout);
         dashboardLayout.setHorizontalGroup(
             dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(dashboardLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addComponent(icon, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         dashboardLayout.setVerticalGroup(
             dashboardLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+            .addGroup(dashboardLayout.createSequentialGroup()
+                .addGap(15, 15, 15)
+                .addComponent(icon, javax.swing.GroupLayout.DEFAULT_SIZE, 66, Short.MAX_VALUE)
+                .addGap(19, 19, 19))
         );
 
         jPanel1.setBackground(new java.awt.Color(175, 191, 255));
@@ -125,9 +135,13 @@ public class ventana1 extends javax.swing.JFrame {
             }
         });
 
-        campoEdad.setEditable(true);
         campoEdad.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
         campoEdad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "EDAD", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", "31", "32", "33", "34", "35", "36", "37", "38", "39", "40", "41", "42", "43", "44", "45", "46", "47", "48", "49", "50", "51", "52", "53", "54", "55", "56", "57", "58", "59", "60", "61", "62", "63", "64", "65", "66", "67", "68", "69", "70", "71", "72", "73", "74", "75", "76", "77", "78", "79", "80", "81", "82", "83", "84", "85", "86", "87", "88", "89", "90", "91", "92", "93", "94", "95", "96", "97", "98", "99", "100", "101", "102", "103", "104", "105", "106", "107", "108", "109", "110", "111", "112", "113", "114", "115", "116", "117", "118", "119", "120", "121", "122" }));
+        campoEdad.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoEdadActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -295,6 +309,10 @@ public class ventana1 extends javax.swing.JFrame {
     }
     }//GEN-LAST:event_campoApellidosKeyTyped
 
+    private void campoEdadActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoEdadActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoEdadActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -339,6 +357,7 @@ public class ventana1 extends javax.swing.JFrame {
     private javax.swing.JTextField campoNombre;
     private javax.swing.JPanel dashboard;
     private javax.swing.JPanel fondoNegro;
+    private javax.swing.JLabel icon;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;

@@ -30,7 +30,7 @@ public class ventana2 extends javax.swing.JFrame {
     
     public void setDato(String dato){
         this.dato = dato;
-        jLabel2.setText("Bienvenido, "+dato);
+        jLabel2.setText("Bienvenido, "+ dato);
     }
 
     /**
@@ -86,6 +86,15 @@ public class ventana2 extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("mensajeBienve");
+        jLabel2.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jLabel2AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -122,7 +131,7 @@ public class ventana2 extends javax.swing.JFrame {
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 848, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -161,6 +170,10 @@ public class ventana2 extends javax.swing.JFrame {
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
+
+    private void jLabel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel2AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2AncestorAdded
 
     /**
      * @param args the command line arguments
