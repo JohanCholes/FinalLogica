@@ -8,6 +8,7 @@ import java.awt.Image;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -36,13 +37,24 @@ public class medellin extends javax.swing.JPanel {
         jLabel1 = new javax.swing.JLabel();
         imgMedellín = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jComboBoxDEPORTE = new javax.swing.JComboBox<>();
+        jComboBoxTEATRO = new javax.swing.JComboBox<>();
+        jComboBoxCONCIERTO = new javax.swing.JComboBox<>();
+        jComboBoxCONFERENCIAS = new javax.swing.JComboBox<>();
+        jComboBoxEXPOSICIONES = new javax.swing.JComboBox<>();
+        jButton1 = new javax.swing.JButton();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(175, 191, 255));
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 38)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("MEDELLÍN");
 
         imgMedellín.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imagenMedellín.jpg"))); // NOI18N
@@ -51,15 +63,105 @@ public class medellin extends javax.swing.JPanel {
 
         jPanel4.setBackground(new java.awt.Color(173, 189, 252));
 
+        jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel2.setText("ESPECTACULOS");
+
+        jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel3.setText("DEPORTES");
+
+        jLabel4.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("TEATRO");
+
+        jLabel5.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel5.setText("CONCIERTOS");
+
+        jLabel6.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel6.setText("CONFERENCIAS");
+
+        jLabel7.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel7.setText("EXPOSICIONES");
+
+        jComboBoxDEPORTE.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ninguno", "FUTBOL", "VOLEIBOL", "TENNIS" }));
+
+        jComboBoxTEATRO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ninguno", "SANTA CLAUS", "CIEN AÑOS DE SOLEDAD", "OPERA" }));
+
+        jComboBoxCONCIERTO.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ninguno", "SILVESTRE DANGOND", "MALUMA", "BAD BUNNY" }));
+
+        jComboBoxCONFERENCIAS.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ninguno", "PYTHON 2.0", "APRENDE TRAIDING", "CRISTO ESTA AQUI" }));
+
+        jComboBoxEXPOSICIONES.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "ninguno", "LA MONA LISA", "LA MOMIA", "LA ULTIMA CENA" }));
+
+        jButton1.setBackground(new java.awt.Color(153, 153, 255));
+        jButton1.setText("COMPRAR BOLETA");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 386, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(jButton1)
+                .addGap(109, 109, 109))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(74, 74, 74)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jComboBoxEXPOSICIONES, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBoxCONFERENCIAS, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBoxCONCIERTO, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jComboBoxTEATRO, javax.swing.GroupLayout.Alignment.TRAILING, 0, 171, Short.MAX_VALUE)
+                            .addComponent(jComboBoxDEPORTE, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel2)
+                .addGap(30, 30, 30)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(jComboBoxDEPORTE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jComboBoxTEATRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(jComboBoxCONCIERTO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(jComboBoxCONFERENCIAS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(jComboBoxEXPOSICIONES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(36, 36, 36))
         );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
@@ -74,7 +176,7 @@ public class medellin extends javax.swing.JPanel {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(57, 57, 57)
                         .addComponent(imgMedellín, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 67, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 92, Short.MAX_VALUE)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -91,6 +193,68 @@ public class medellin extends javax.swing.JPanel {
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+
+        //condiciones para controlar la utilizacion de campos
+        //El usuario no ha seleccionado ningun espectaculo
+        if(jComboBoxDEPORTE.getSelectedItem().toString()=="ninguno"
+            && jComboBoxTEATRO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONCIERTO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString()=="ninguno"
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString()=="ninguno"){
+            JOptionPane.showMessageDialog(null, "POR FAVOR, SELECCIONE EL ESPECTACULO AL CUAL QUIERE ASISTIR\n");
+        }
+
+        //El usuario eligio solo un evento de los espectaculos
+        else if((jComboBoxDEPORTE.getSelectedItem().toString()!="ninguno"
+            && jComboBoxTEATRO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONCIERTO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString()=="ninguno"
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString()=="ninguno")
+
+        ||
+
+        (jComboBoxDEPORTE.getSelectedItem().toString()=="ninguno"
+            && jComboBoxTEATRO.getSelectedItem().toString()!="ninguno"
+            && jComboBoxCONCIERTO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString()=="ninguno"
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString()=="ninguno")
+
+        ||
+
+        (jComboBoxDEPORTE.getSelectedItem().toString()=="ninguno"
+            && jComboBoxTEATRO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONCIERTO.getSelectedItem().toString()!="ninguno"
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString()=="ninguno"
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString()=="ninguno")
+
+        ||
+
+        (jComboBoxDEPORTE.getSelectedItem().toString()=="ninguno"
+            && jComboBoxTEATRO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONCIERTO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString()!="ninguno"
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString()=="ninguno")
+
+        ||
+
+        (jComboBoxDEPORTE.getSelectedItem().toString()=="ninguno"
+            && jComboBoxTEATRO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONCIERTO.getSelectedItem().toString()=="ninguno"
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString()=="ninguno"
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString()!="ninguno")
+        )
+
+        {
+            //proceso con la siguiente ventana
+        }
+
+        else
+        JOptionPane.showMessageDialog(null, "POR FAVOR, SELECCIONE SOLO UN EVENTO\n");
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 //    private void setImageLabel(JLabel labelName, String root){
 //        ImageIcon image = new ImageIcon(root);
 //        Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
@@ -101,7 +265,19 @@ public class medellin extends javax.swing.JPanel {
 //    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel imgMedellín;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBoxCONCIERTO;
+    private javax.swing.JComboBox<String> jComboBoxCONFERENCIAS;
+    private javax.swing.JComboBox<String> jComboBoxDEPORTE;
+    private javax.swing.JComboBox<String> jComboBoxEXPOSICIONES;
+    private javax.swing.JComboBox<String> jComboBoxTEATRO;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
