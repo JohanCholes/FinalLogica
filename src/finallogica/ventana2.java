@@ -4,6 +4,8 @@
  */
 package finallogica;
 
+import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.JPanel;
 
 
@@ -18,8 +20,12 @@ public class ventana2 extends javax.swing.JFrame {
      * Creates new form ventana2
      */
     private String dato;
+    public static String panelActual;
     public ventana2() {
         initComponents();
+        //para el icono
+        setIconImage(getIconImage());
+        //para que aparezca en el centro de la pantalla
         this.setLocationRelativeTo(null);
         
         //iniciar con ventana dependiendo de que se selecciono en combobox ciudad
@@ -33,8 +39,14 @@ public class ventana2 extends javax.swing.JFrame {
             Bogotá p1 = new Bogotá();
             cambiarContent(p1);
         }
-        
     }
+    
+     //para el inconsito
+    public Image getIconImage() {
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("imagenes/iconoParaVentana.jpg"));
+        return retValue;
+    }
+    
     //funcion cambiarContent
     private void cambiarContent(JPanel p1){
         p1.setSize(848, 424);
@@ -44,12 +56,12 @@ public class ventana2 extends javax.swing.JFrame {
         content.revalidate();
         content.repaint();
     }
-            
+    
+    //funcion que da bienvenido + nombre del usuario        
     public void setDato(String dato){
         this.dato = dato;
         jLabel2.setText("Bienvenido, "+ dato);
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -66,7 +78,7 @@ public class ventana2 extends javax.swing.JFrame {
         TBbogotá = new javax.swing.JToggleButton();
         jLabel2 = new javax.swing.JLabel();
         icon = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        bSalir = new javax.swing.JButton();
         content = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -120,6 +132,11 @@ public class ventana2 extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("mensajeBienve");
+        jLabel2.addContainerListener(new java.awt.event.ContainerAdapter() {
+            public void componentAdded(java.awt.event.ContainerEvent evt) {
+                jLabel2ComponentAdded(evt);
+            }
+        });
         jLabel2.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
                 jLabel2AncestorAdded(evt);
@@ -133,17 +150,17 @@ public class ventana2 extends javax.swing.JFrame {
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoeste-removebg-preview.png"))); // NOI18N
         icon.setText("jLabel2");
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 255));
-        jButton1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 0, 0));
-        jButton1.setText("SALIR");
-        jButton1.setBorder(null);
-        jButton1.setBorderPainted(false);
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bSalir.setBackground(new java.awt.Color(0, 51, 255));
+        bSalir.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
+        bSalir.setForeground(new java.awt.Color(255, 0, 0));
+        bSalir.setText("SALIR");
+        bSalir.setBorder(null);
+        bSalir.setBorderPainted(false);
+        bSalir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bSalir.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        bSalir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bSalirActionPerformed(evt);
             }
         });
 
@@ -164,7 +181,7 @@ public class ventana2 extends javax.swing.JFrame {
                         .addGap(7, 7, 7)
                         .addComponent(TBbogotá)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(bSalir, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -178,7 +195,7 @@ public class ventana2 extends javax.swing.JFrame {
                     .addComponent(TBmedellin)
                     .addComponent(TBbarranquilla)
                     .addComponent(TBbogotá)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(bSalir, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(19, 19, 19))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
@@ -245,6 +262,8 @@ public class ventana2 extends javax.swing.JFrame {
         //cambiamos segun el content segun tenga el boton seleccionado
         medellin p1 = new medellin();
         cambiarContent(p1);
+        //asignamos a la variable global panelActual, el nombre del panel donde estamos
+        panelActual = "medellin";
     }//GEN-LAST:event_TBmedellinActionPerformed
 
     private void jLabel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel2AncestorAdded
@@ -259,6 +278,8 @@ public class ventana2 extends javax.swing.JFrame {
         //cambiamos segun el content segun tenga el boton seleccionado
         barranquilla p1 = new barranquilla();
         cambiarContent(p1);
+        //asignamos a la variable global panelActual, el nombre del panel donde estamos
+        panelActual = "barranquilla";
     }//GEN-LAST:event_TBbarranquillaActionPerformed
 
     private void TBbogotáActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TBbogotáActionPerformed
@@ -269,6 +290,8 @@ public class ventana2 extends javax.swing.JFrame {
         //cambiamos segun el content segun tenga el boton seleccionado
         Bogotá p1 = new Bogotá();
         cambiarContent(p1);
+        //asignamos a la variable global panelActual, el nombre del panel donde estamos
+        panelActual = "bogotá";
     }//GEN-LAST:event_TBbogotáActionPerformed
 
     private void contentAncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_contentAncestorAdded
@@ -276,12 +299,16 @@ public class ventana2 extends javax.swing.JFrame {
         
     }//GEN-LAST:event_contentAncestorAdded
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void bSalirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bSalirActionPerformed
         // TODO add your handling code here:
         ventana1 vent1 = new ventana1();
         vent1.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_bSalirActionPerformed
+
+    private void jLabel2ComponentAdded(java.awt.event.ContainerEvent evt) {//GEN-FIRST:event_jLabel2ComponentAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2ComponentAdded
 
     /**
      * @param args the command line arguments
@@ -322,9 +349,9 @@ public class ventana2 extends javax.swing.JFrame {
     private javax.swing.JToggleButton TBbarranquilla;
     private javax.swing.JToggleButton TBbogotá;
     private javax.swing.JToggleButton TBmedellin;
+    private javax.swing.JButton bSalir;
     private javax.swing.JPanel content;
     private javax.swing.JLabel icon;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

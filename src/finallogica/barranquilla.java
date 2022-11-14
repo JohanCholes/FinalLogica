@@ -3,7 +3,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
  */
 package finallogica;
+import static finallogica.medellin.showEspecifico;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 /**
  *
  * @author Johan Choles
@@ -13,10 +15,11 @@ public class barranquilla extends javax.swing.JPanel {
     /**
      * Creates new form barranquilla
      */
+    private static byte valorVerdad;
     public barranquilla() {
         initComponents();
+        
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -27,7 +30,7 @@ public class barranquilla extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
+        ventana2_1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jComboBoxDEPORTE = new javax.swing.JComboBox<>();
@@ -39,19 +42,20 @@ public class barranquilla extends javax.swing.JPanel {
         jComboBoxCONFERENCIAS = new javax.swing.JComboBox<>();
         jLabel7 = new javax.swing.JLabel();
         jComboBoxEXPOSICIONES = new javax.swing.JComboBox<>();
-        jButton1 = new javax.swing.JButton();
+        bAceptar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         imgMedellín = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setBackground(new java.awt.Color(175, 191, 255));
+        jPanel1.setLayout(null);
 
-        jPanel2.setBackground(new java.awt.Color(173, 189, 252));
+        ventana2_1.setBackground(new java.awt.Color(173, 189, 252));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(255, 255, 102));
-        jLabel2.setText("ESPECTACULOS");
+        jLabel2.setText("ESPECTÁCULOS");
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(255, 255, 255));
@@ -83,145 +87,198 @@ public class barranquilla extends javax.swing.JPanel {
 
         jComboBoxEXPOSICIONES.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SELECCIONAR", "LA MONA LISA", "LA MOMIA", "LA ULTIMA CENA" }));
 
-        jButton1.setBackground(new java.awt.Color(153, 153, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("COMPRAR BOLETA");
-        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        bAceptar.setBackground(new java.awt.Color(153, 153, 255));
+        bAceptar.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        bAceptar.setText("ACEPTAR");
+        bAceptar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bAceptar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                bAceptarActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout ventana2_1Layout = new javax.swing.GroupLayout(ventana2_1);
+        ventana2_1.setLayout(ventana2_1Layout);
+        ventana2_1Layout.setHorizontalGroup(
+            ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ventana2_1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(8, 8, 8)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBoxCONFERENCIAS, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBoxEXPOSICIONES, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBoxTEATRO, javax.swing.GroupLayout.Alignment.TRAILING, 0, 189, Short.MAX_VALUE)
                     .addComponent(jComboBoxCONCIERTO, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBoxDEPORTE, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventana2_1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(75, 75, 75))
-            .addGroup(jPanel2Layout.createSequentialGroup()
+            .addGroup(ventana2_1Layout.createSequentialGroup()
                 .addGap(118, 118, 118)
-                .addComponent(jButton1)
+                .addComponent(bAceptar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+        ventana2_1Layout.setVerticalGroup(
+            ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventana2_1Layout.createSequentialGroup()
                 .addContainerGap(60, Short.MAX_VALUE)
                 .addComponent(jLabel2)
                 .addGap(51, 51, 51)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jComboBoxDEPORTE, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBoxTEATRO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel4))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBoxCONCIERTO, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel5))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBoxCONFERENCIAS, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel6))
                 .addGap(18, 18, 18)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBoxEXPOSICIONES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel7))
                 .addGap(18, 18, 18)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(bAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(64, 64, 64))
         );
 
+        jPanel1.add(ventana2_1);
+        ventana2_1.setBounds(463, 0, 387, 470);
+
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 38)); // NOI18N
         jLabel1.setText("BARRANQUILLA");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(73, 32, 292, 42);
 
         imgMedellín.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgBarranquilla.jpg"))); // NOI18N
         imgMedellín.setText("imagenMedellín");
         imgMedellín.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(73, 73, 73)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 292, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(47, 47, 47)
-                        .addComponent(imgMedellín, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 76, Short.MAX_VALUE)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(32, 32, 32)
-                .addComponent(jLabel1)
-                .addGap(30, 30, 30)
-                .addComponent(imgMedellín, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
+        jPanel1.add(imgMedellín);
+        imgMedellín.setBounds(47, 104, 340, 303);
 
         add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
+        verificarSoloUnEvento();
+        //condiciones para controlar la utilizacion de campos
+        //El usuario no ha seleccionado ningun espectaculo
+        if(jComboBoxDEPORTE.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxTEATRO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONCIERTO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString().equals("SELECCIONAR")){
+            JOptionPane.showMessageDialog(null, "POR FAVOR, SELECCIONE EL ESPECTACULO AL CUAL QUIERE ASISTIR\n");
+        }
 
+         //El usuario eligio solo un evento de los espectaculos
+        else if (valorVerdad == (byte) (1)) {
+            //asigno el valor de 0 a la variable por si el usuario vuelve a ventana 1 e ingresa otra vez a medellin
+            valorVerdad=0;
+            //asigno el nombre del show a la variable showEspecifico
+            if (jComboBoxDEPORTE.getSelectedItem().toString()!="SELECCIONAR") {
+                showEspecifico = jComboBoxDEPORTE.getSelectedItem().toString();
+            }else if(jComboBoxTEATRO.getSelectedItem().toString()!="SELECCIONAR"){
+                showEspecifico = jComboBoxTEATRO.getSelectedItem().toString();
+            }else if(jComboBoxCONCIERTO.getSelectedItem().toString()!="SELECCIONAR"){
+                showEspecifico = jComboBoxCONCIERTO.getSelectedItem().toString();
+            }else if(jComboBoxCONFERENCIAS.getSelectedItem().toString()!="SELECCIONAR"){
+                showEspecifico = jComboBoxCONFERENCIAS.getSelectedItem().toString();
+            }else if(jComboBoxEXPOSICIONES.getSelectedItem().toString()!="SELECCIONAR"){
+                showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString();
+            }
+            //abrir la ventanaComprar
+            ventanaComprar p1 = new ventanaComprar();
+            funcionVentana2_1(p1);
+        } else {
+            JOptionPane.showMessageDialog(null, "POR FAVOR, SELECCIONE SOLO UN EVENTO\n");
+        }
+    }//GEN-LAST:event_bAceptarActionPerformed
+    //funcion que verifica que solo un show este seleccionado
+    public void verificarSoloUnEvento() {
+        try {
+             if((jComboBoxDEPORTE.getSelectedItem().toString()!="SELECCIONAR"
+            && jComboBoxTEATRO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONCIERTO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString().equals("SELECCIONAR"))
+        ||
+        (jComboBoxDEPORTE.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxTEATRO.getSelectedItem().toString()!="SELECCIONAR"
+            && jComboBoxCONCIERTO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString().equals("SELECCIONAR"))
+        ||
+        (jComboBoxDEPORTE.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxTEATRO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONCIERTO.getSelectedItem().toString()!="SELECCIONAR"
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString().equals("SELECCIONAR"))
+        ||
+        (jComboBoxDEPORTE.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxTEATRO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONCIERTO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString()!="SELECCIONAR"
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString().equals("SELECCIONAR"))
+        ||
+        (jComboBoxDEPORTE.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxTEATRO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONCIERTO.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxCONFERENCIAS.getSelectedItem().toString().equals("SELECCIONAR")
+            && jComboBoxEXPOSICIONES.getSelectedItem().toString()!="SELECCIONAR")
+                )
+
+        {
+           valorVerdad =1;
+        }else{
+                 valorVerdad=0;
+             }
+            
+        } catch (Exception e) {
+            System.out.println("Ocurrio un error en la funcion verificarSoloUnEvento" + e);
+        }
+    }
+    //funcion que cambia la a la ventana comprar
+    public void funcionVentana2_1(JPanel p1) {
+        p1.setSize(387, 470);
+
+        ventana2_1.removeAll();
+        ventana2_1.add(p1);
+        ventana2_1.revalidate();
+        ventana2_1.repaint();
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton bComprar;
+    private javax.swing.JButton bAceptar;
     private javax.swing.JLabel imgMedellín;
-    private javax.swing.JButton jButton1;
     private javax.swing.JComboBox<String> jComboBoxCONCIERTO;
-    private javax.swing.JComboBox<String> jComboBoxCONCIERTO1;
     private javax.swing.JComboBox<String> jComboBoxCONFERENCIAS;
-    private javax.swing.JComboBox<String> jComboBoxCONFERENCIAS1;
     private javax.swing.JComboBox<String> jComboBoxDEPORTE;
-    private javax.swing.JComboBox<String> jComboBoxDEPORTE1;
     private javax.swing.JComboBox<String> jComboBoxEXPOSICIONES;
-    private javax.swing.JComboBox<String> jComboBoxEXPOSICIONES1;
     private javax.swing.JComboBox<String> jComboBoxTEATRO;
-    private javax.swing.JComboBox<String> jComboBoxTEATRO1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel ventana2_1;
     // End of variables declaration//GEN-END:variables
 }

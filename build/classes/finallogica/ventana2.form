@@ -83,7 +83,7 @@
                               <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
                               <Component id="TBbogotá" min="-2" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jButton1" min="-2" pref="64" max="-2" attributes="0"/>
+                              <Component id="bSalir" min="-2" pref="64" max="-2" attributes="0"/>
                           </Group>
                           <Component id="jLabel2" min="-2" pref="155" max="-2" attributes="0"/>
                       </Group>
@@ -101,7 +101,7 @@
                           <Component id="TBmedellin" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="TBbarranquilla" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="TBbogotá" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButton1" alignment="3" max="32767" attributes="0"/>
+                          <Component id="bSalir" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   </Group>
@@ -198,6 +198,7 @@
                 <Property name="text" type="java.lang.String" value="mensajeBienve"/>
               </Properties>
               <Events>
+                <EventHandler event="componentAdded" listener="java.awt.event.ContainerListener" parameters="java.awt.event.ContainerEvent" handler="jLabel2ComponentAdded"/>
                 <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jLabel2AncestorAdded"/>
               </Events>
             </Component>
@@ -209,7 +210,7 @@
                 <Property name="text" type="java.lang.String" value="jLabel2"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="jButton1">
+            <Component class="javax.swing.JButton" name="bSalir">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="33" red="0" type="rgb"/>
@@ -231,7 +232,7 @@
                 <Property name="horizontalTextPosition" type="int" value="0"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="bSalirActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
