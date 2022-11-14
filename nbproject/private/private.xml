@@ -3,11 +3,17 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/Johan%20Choles/Desktop/FinalLogica/src/finallogica/medellin.java</file>
             <file>file:/C:/Users/Johan%20Choles/Desktop/FinalLogica/src/finallogica/ventanaComprar.java</file>
             <file>file:/C:/Users/Johan%20Choles/Desktop/FinalLogica/src/finallogica/ventana2.java</file>
             <file>file:/C:/Users/Johan%20Choles/Desktop/FinalLogica/src/finallogica/ventana1.java</file>
             <file>file:/C:/Users/Johan%20Choles/Desktop/FinalLogica/src/finallogica/barranquilla.java</file>
+=======
+            <file>file:/C:/Users/JESUS%20ALBERTO/Desktop/FinalLogica/src/finallogica/barranquilla.java</file>
+            <file>file:/C:/Users/JESUS%20ALBERTO/Desktop/FinalLogica/src/finallogica/medellin.java</file>
+            <file>file:/C:/Users/JESUS%20ALBERTO/Desktop/FinalLogica/src/finallogica/Bogotá.java</file>
+>>>>>>> 26d261baf8ce5d7a2182447a9f6231c300866d69
         </group>
     </open-files>
 </project-private>
