@@ -6,6 +6,9 @@ package finallogica;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.util.Timer;
+import java.util.TimerTask;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 
 
@@ -23,6 +26,23 @@ public class ventana2 extends javax.swing.JFrame {
     public static String ciudadEspecifica;
     public ventana2() {
         initComponents();
+        //funcionalidad del tiempo para cerrar programa
+             Timer timer = new Timer();
+             TimerTask task = new TimerTask()
+             {
+                 int comienzo = 1;
+                 public void run(){
+                     if(comienzo ==900){
+                         JOptionPane.showMessageDialog(null, "SU TIEMPO EN ESPERA SE HA AGOTADO\n");
+                        System.exit(0);
+                             }
+                     
+                     else
+                     comienzo += 1;
+                 }
+             };
+             timer.schedule(task,0, 1000);
+        
           //para el icono
         setIconImage(getIconImage());
          //para que aparezca en el centro de la pantalla
