@@ -4,6 +4,13 @@
  */
 package finallogica;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.data.general.DefaultPieDataset;
+
 /**
  *
  * @author Johan Choles
@@ -16,6 +23,33 @@ public class ventanaComprar extends javax.swing.JPanel {
     public ventanaComprar() {
         initComponents();
         showEspecifico.setText(medellin.showEspecifico);
+        
+        //grafica con libreria jfreechart
+        //usamos la variable global "boletasDisponible" creada en ventana1
+        //creamos una variable que tendra las bolestas vendidas
+        int boletasVendidas = ventana1.boletasDisponible - (int)(Math.random()*500);
+        //a continuacion, todo el proceso para la grafica
+        DefaultPieDataset datos = new DefaultPieDataset();
+        datos.setValue("BOLESTAS DISPONIBLES", ventana1.boletasDisponible);
+        datos.setValue("BOLETAS VENDIDAS", boletasVendidas);
+        
+        JFreeChart graficoCircular = ChartFactory.createPieChart(
+        "",          //nombre del grafico  
+        datos,                      //datos
+        true,                       //nombre de las categorias
+        true,                       //herramientas
+        false                       //generacion de URl
+        );
+        
+        ChartPanel panel = new ChartPanel(graficoCircular);
+        panel.setMouseWheelEnabled(true);
+        panel.setPreferredSize(new Dimension(220,110));
+        
+        grafiquita.setLayout(new BorderLayout());
+        grafiquita.add(panel, BorderLayout.NORTH);
+        repaint();
+        
+        
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -31,6 +65,7 @@ public class ventanaComprar extends javax.swing.JPanel {
         showEspecifico = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
+        grafiquita = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(204, 204, 204));
 
@@ -84,15 +119,34 @@ public class ventanaComprar extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        javax.swing.GroupLayout grafiquitaLayout = new javax.swing.GroupLayout(grafiquita);
+        grafiquita.setLayout(grafiquitaLayout);
+        grafiquitaLayout.setHorizontalGroup(
+            grafiquitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 220, Short.MAX_VALUE)
+        );
+        grafiquitaLayout.setVerticalGroup(
+            grafiquitaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 110, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout panelComprarLayout = new javax.swing.GroupLayout(panelComprar);
         panelComprar.setLayout(panelComprarLayout);
         panelComprarLayout.setHorizontalGroup(
             panelComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, panelComprarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(grafiquita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(88, 88, 88))
         );
         panelComprarLayout.setVerticalGroup(
             panelComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(panelComprarLayout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(grafiquita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -109,10 +163,14 @@ public class ventanaComprar extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel grafiquita;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     private javax.swing.JPanel panelComprar;
     private javax.swing.JLabel showEspecifico;
     // End of variables declaration//GEN-END:variables
+
+
+
 }

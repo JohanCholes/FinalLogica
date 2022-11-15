@@ -17,6 +17,7 @@ public class ventana1 extends javax.swing.JFrame {
 
     /** Creates new form ventana1 */
     public static String comboCiudad ="";
+    public static int boletasDisponible;
     public ventana1() {
         initComponents();
           //para el icono
@@ -30,6 +31,8 @@ public class ventana1 extends javax.swing.JFrame {
 //        placeHolder = new TextPrompt("EDAD", jComboBox1);
         placeHolder = new TextPrompt("DIRECCIÓN", campoDirección);
        
+        //asignamos un valor de boletas disponibles aleatorio
+        boletasDisponible = (int)(Math.random()*10000);
     }
     //para el inconsito
     public Image getIconImage() {
