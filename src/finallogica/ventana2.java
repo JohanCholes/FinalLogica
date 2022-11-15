@@ -20,6 +20,7 @@ public class ventana2 extends javax.swing.JFrame {
      * Creates new form ventana2
      */
     private String dato;
+    public static String ciudadEspecifica;
     public ventana2() {
         initComponents();
           //para el icono
@@ -29,12 +30,15 @@ public class ventana2 extends javax.swing.JFrame {
         
         //iniciar con ventana dependiendo de que se selecciono en combobox ciudad
         if (ventana1.comboCiudad.equals("Medellín")) {
+            ciudadEspecifica = "medellin";
             medellin p1 = new medellin();
             cambiarContent(p1);
         }else if (ventana1.comboCiudad.equals("Barranquilla")) {
+            ciudadEspecifica ="barranquilla";
             barranquilla p1 = new barranquilla();
             cambiarContent(p1);
         }else if(ventana1.comboCiudad.equals("Bogotá")){
+            ciudadEspecifica = "bogota";
             Bogotá p1 = new Bogotá();
             cambiarContent(p1);
         }
@@ -252,7 +256,8 @@ public class ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         TBbarranquilla.setSelected(false);
         TBbogotá.setSelected(false);
-        
+        //asignamos la ciudad especifica a la variable "ciudadEspecifica" para usarla en ventanaComprar
+        ciudadEspecifica = "medellin";
         //cambiamos segun el content segun tenga el boton seleccionado
         medellin p1 = new medellin();
         cambiarContent(p1);
@@ -266,6 +271,8 @@ public class ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         TBmedellin.setSelected(false);
         TBbogotá.setSelected(false);
+        //asignamos la ciudad especifica a la variable "ciudadEspecifica" para usarla en ventanaComprar
+        ciudadEspecifica = "barranquilla";
         
         //cambiamos segun el content segun tenga el boton seleccionado
         barranquilla p1 = new barranquilla();
@@ -276,6 +283,8 @@ public class ventana2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         TBmedellin.setSelected(false);
         TBbarranquilla.setSelected(false);
+        //asignamos la ciudad especifica a la variable "ciudadEspecifica" para usarla en ventanaComprar
+        ciudadEspecifica = "bogota";
         
         //cambiamos segun el content segun tenga el boton seleccionado
         Bogotá p1 = new Bogotá();

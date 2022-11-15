@@ -17,7 +17,7 @@ public class ventana1 extends javax.swing.JFrame {
 
     /** Creates new form ventana1 */
     public static String comboCiudad ="";
-    public static int boletasDisponible;
+    public static int boletasDisponible; //eliminar esta variable
     public ventana1() {
         initComponents();
           //para el icono

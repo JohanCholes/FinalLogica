@@ -18,6 +18,7 @@ public class medellin extends javax.swing.JPanel {
     //creamos variable que contendra el valor de verdad de la funcion verificarSoloUnEvento
     private static byte valorVerdad;
     public static String showEspecifico;
+    public static String eventoGrafica;
     public medellin() {
         initComponents();
 //        setImageLabel(imgMedellín, "src/imagenes/imagenMedellín.jpg");
@@ -201,14 +202,19 @@ public class medellin extends javax.swing.JPanel {
             valorVerdad = 0;
             //asigno el nombre del show a la variable showEspecifico
             if(jComboBoxDEPORTE.getSelectedItem().toString()!="SELECCIONAR"){
+                eventoGrafica = "DEPORTE";
                 showEspecifico = jComboBoxDEPORTE.getSelectedItem().toString();    
             }else if(jComboBoxTEATRO.getSelectedItem().toString()!="SELECCIONAR"){
+                 eventoGrafica = "TEATRO";
                 showEspecifico = jComboBoxTEATRO.getSelectedItem().toString();  
             }else if(jComboBoxCONCIERTO.getSelectedItem().toString()!="SELECCIONAR"){
+                 eventoGrafica = "CONCIERTO";
                 showEspecifico = jComboBoxCONCIERTO.getSelectedItem().toString();  
             }else if(jComboBoxCONFERENCIAS.getSelectedItem().toString()!="SELECCIONAR"){
+                 eventoGrafica = "CONFERENCIAS";
                 showEspecifico = jComboBoxCONFERENCIAS.getSelectedItem().toString();  
             }else if(jComboBoxEXPOSICIONES.getSelectedItem().toString()!="SELECCIONAR"){
+                 eventoGrafica = "EXPOSICIONES";
                 showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString();  
             }
             //abrir la ventanaComprar
