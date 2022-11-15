@@ -17,7 +17,7 @@ public class ventana1 extends javax.swing.JFrame {
 
     /** Creates new form ventana1 */
     public static String comboCiudad ="";
-    public static int boletasDisponible; //eliminar esta variable
+    public static String direccion="";
     public ventana1() {
         initComponents();
           //para el icono
@@ -32,7 +32,7 @@ public class ventana1 extends javax.swing.JFrame {
         placeHolder = new TextPrompt("DIRECCIÓN", campoDirección);
        
         //asignamos un valor de boletas disponibles aleatorio
-        boletasDisponible = (int)(Math.random()*10000);
+
     }
     //para el inconsito
     public Image getIconImage() {
@@ -140,6 +140,11 @@ public class ventana1 extends javax.swing.JFrame {
 
         campoDirección.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         campoDirección.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campoDirección.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campoDirecciónActionPerformed(evt);
+            }
+        });
 
         JComboCiudad.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         JComboCiudad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Medellín", "Barranquilla", "Bogotá" }));
@@ -205,28 +210,29 @@ public class ventana1 extends javax.swing.JFrame {
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(campoCédula, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(campoEdad))
-                .addGap(18, 18, 18)
-                .addComponent(campoDirección, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(JComboCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(botonContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(campoCédula, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(campoEdad))
+                        .addGap(18, 18, 18)
+                        .addComponent(campoDirección, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(JComboCiudad, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botonContinuar, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel2)))
                 .addContainerGap())
         );
 
@@ -289,7 +295,8 @@ public class ventana1 extends javax.swing.JFrame {
         
         else
              JOptionPane.showMessageDialog(null, "Revise que todos los campos de datos esten completos\n");
-        
+        //asignamos la direccion a la variable global direccion.
+        direccion=campoDirección.getText();
        
     }//GEN-LAST:event_botonContinuarActionPerformed
 
@@ -351,6 +358,10 @@ public class ventana1 extends javax.swing.JFrame {
         // TODO add your handling code here:
         
     }//GEN-LAST:event_JComboCiudadActionPerformed
+
+    private void campoDirecciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDirecciónActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campoDirecciónActionPerformed
 
     /**
      * @param args the command line arguments

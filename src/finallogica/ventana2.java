@@ -27,25 +27,24 @@ public class ventana2 extends javax.swing.JFrame {
     public ventana2() {
         initComponents();
         //funcionalidad del tiempo para cerrar programa
-             Timer timer = new Timer();
-             TimerTask task = new TimerTask()
-             {
-                 int comienzo = 1;
-                 public void run(){
-                     if(comienzo ==900){
-                         JOptionPane.showMessageDialog(null, "SU TIEMPO EN ESPERA SE HA AGOTADO\n");
-                        System.exit(0);
-                             }
-                     
-                     else
-                     comienzo += 1;
-                 }
-             };
-             timer.schedule(task,0, 1000);
-        
-          //para el icono
+        Timer timer = new Timer();
+        TimerTask task = new TimerTask() {
+            int comienzo = 1;
+
+            public void run() {
+                if (comienzo == 900) {
+                    JOptionPane.showMessageDialog(null, "SU TIEMPO EN ESPERA SE HA AGOTADO\n");
+                    System.exit(0);
+                } else {
+                    comienzo += 1;
+                }
+            }
+        };
+        timer.schedule(task, 0, 1000);
+
+        //para el icono
         setIconImage(getIconImage());
-         //para que aparezca en el centro de la pantalla
+        //para que aparezca en el centro de la pantalla
         this.setLocationRelativeTo(null);
         
         //iniciar con ventana dependiendo de que se selecciono en combobox ciudad
@@ -62,6 +61,16 @@ public class ventana2 extends javax.swing.JFrame {
             Bogotá p1 = new Bogotá();
             cambiarContent(p1);
         }
+//        if (ciudadEspecifica.equals("medellin")) {
+//            medellin p1 = new medellin();
+//            cambiarContent(p1);
+//        }else if(ciudadEspecifica.equals("barranquilla")){
+//            barranquilla p1 = new barranquilla();
+//            cambiarContent(p1);
+//        }else if(ciudadEspecifica.equals("bogota")){
+//            Bogotá p1 = new Bogotá();
+//            cambiarContent(p1);
+//        }
         
     }
     //para el inconsito

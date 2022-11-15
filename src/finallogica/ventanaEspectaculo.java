@@ -6,22 +6,19 @@ package finallogica;
 
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
 /**
  *
  * @author Johan Choles
  */
-public class medellin extends javax.swing.JPanel {
+public class ventanaEspectaculo extends javax.swing.JPanel {
 
     /**
-     * Creates new form medellin
+     * Creates new form ventanaEspectaculo
      */
-    //creamos variable que contendra el valor de verdad de la funcion verificarSoloUnEvento
     private static byte valorVerdad;
-    public static String showEspecifico;
-    public static String eventoGrafica;
-    public medellin() {
+    public ventanaEspectaculo() {
         initComponents();
-//        setImageLabel(imgMedellín, "src/imagenes/imagenMedellín.jpg");
     }
 
     /**
@@ -33,9 +30,6 @@ public class medellin extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        imgMedellín = new javax.swing.JLabel();
         ventana2_1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -49,22 +43,6 @@ public class medellin extends javax.swing.JPanel {
         jComboBoxCONCIERTO = new javax.swing.JComboBox<>();
         jComboBoxTEATRO = new javax.swing.JComboBox<>();
         jComboBoxDEPORTE = new javax.swing.JComboBox<>();
-
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(175, 191, 255));
-        jPanel1.setLayout(null);
-
-        jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 38)); // NOI18N
-        jLabel1.setText("MEDELLÍN");
-        jPanel1.add(jLabel1);
-        jLabel1.setBounds(135, 29, 183, 42);
-
-        imgMedellín.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imagenMedellín.jpg"))); // NOI18N
-        imgMedellín.setText("imagenMedellín");
-        imgMedellín.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
-        jPanel1.add(imgMedellín);
-        imgMedellín.setBounds(57, 106, 340, 303);
 
         ventana2_1.setBackground(new java.awt.Color(173, 189, 252));
 
@@ -117,36 +95,39 @@ public class medellin extends javax.swing.JPanel {
         ventana2_1Layout.setHorizontalGroup(
             ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(jComboBoxDEPORTE, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventana2_1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(54, 54, 54)
-                .addComponent(jComboBoxTEATRO, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(6, 6, 6)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(jComboBoxCONCIERTO, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jComboBoxCONFERENCIAS, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(7, 7, 7)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
-                .addComponent(jComboBoxEXPOSICIONES, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(96, 96, 96)
-                .addComponent(bAceptar))
+                .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ventana2_1Layout.createSequentialGroup()
+                        .addGap(68, 68, 68)
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ventana2_1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(jComboBoxDEPORTE, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ventana2_1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(54, 54, 54)
+                        .addComponent(jComboBoxTEATRO, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ventana2_1Layout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(jComboBoxCONCIERTO, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ventana2_1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jComboBoxCONFERENCIAS, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ventana2_1Layout.createSequentialGroup()
+                        .addGap(7, 7, 7)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 178, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(6, 6, 6)
+                        .addComponent(jComboBoxEXPOSICIONES, javax.swing.GroupLayout.PREFERRED_SIZE, 169, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(ventana2_1Layout.createSequentialGroup()
+                        .addGap(96, 96, 96)
+                        .addComponent(bAceptar)))
+                .addContainerGap(38, Short.MAX_VALUE))
         );
         ventana2_1Layout.setVerticalGroup(
             ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -174,13 +155,24 @@ public class medellin extends javax.swing.JPanel {
                     .addComponent(jLabel7)
                     .addComponent(jComboBoxEXPOSICIONES, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(bAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(bAceptar, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
-        jPanel1.add(ventana2_1);
-        ventana2_1.setBounds(450, 0, 398, 470);
-
-        add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 850, 470));
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 398, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(ventana2_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 470, Short.MAX_VALUE)
+            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(ventana2_1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
     }// </editor-fold>//GEN-END:initComponents
 
     private void bAceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAceptarActionPerformed
@@ -202,31 +194,31 @@ public class medellin extends javax.swing.JPanel {
             valorVerdad = 0;
             //asigno el nombre del show a la variable showEspecifico
             if(jComboBoxDEPORTE.getSelectedItem().toString()!="SELECCIONAR"){
-                eventoGrafica = "DEPORTE";
-                showEspecifico = jComboBoxDEPORTE.getSelectedItem().toString();    
+                medellin.eventoGrafica = "DEPORTE";
+                medellin.showEspecifico = jComboBoxDEPORTE.getSelectedItem().toString();
             }else if(jComboBoxTEATRO.getSelectedItem().toString()!="SELECCIONAR"){
-                 eventoGrafica = "TEATRO";
-                showEspecifico = jComboBoxTEATRO.getSelectedItem().toString();  
+                medellin.eventoGrafica = "TEATRO";
+                medellin.showEspecifico = jComboBoxTEATRO.getSelectedItem().toString();
             }else if(jComboBoxCONCIERTO.getSelectedItem().toString()!="SELECCIONAR"){
-                 eventoGrafica = "CONCIERTO";
-                showEspecifico = jComboBoxCONCIERTO.getSelectedItem().toString();  
+                medellin.eventoGrafica = "CONCIERTO";
+                medellin.showEspecifico = jComboBoxCONCIERTO.getSelectedItem().toString();
             }else if(jComboBoxCONFERENCIAS.getSelectedItem().toString()!="SELECCIONAR"){
-                 eventoGrafica = "CONFERENCIAS";
-                showEspecifico = jComboBoxCONFERENCIAS.getSelectedItem().toString();  
+                medellin.eventoGrafica = "CONFERENCIAS";
+                medellin.showEspecifico = jComboBoxCONFERENCIAS.getSelectedItem().toString();
             }else if(jComboBoxEXPOSICIONES.getSelectedItem().toString()!="SELECCIONAR"){
-                 eventoGrafica = "EXPOSICIONES";
-                showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString();  
+                medellin.eventoGrafica = "EXPOSICIONES";
+                medellin.showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString();
             }
             //abrir la ventanaComprar
             ventanaComprar p1 = new ventanaComprar();
             funcionVentana2_1(p1);
-        
+
         }else{
             JOptionPane.showMessageDialog(null, "POR FAVOR, SELECCIONE SOLO UN EVENTO\n");
         }
     }//GEN-LAST:event_bAceptarActionPerformed
 
-    //creamos una funcion que asignara a la variable global valorVerdad un numero
+     //creamos una funcion que asignara a la variable global valorVerdad un numero
     public void verificarSoloUnEvento() {
         try {
              if((jComboBoxDEPORTE.getSelectedItem().toString()!="SELECCIONAR"
@@ -279,32 +271,20 @@ public class medellin extends javax.swing.JPanel {
         ventana2_1.repaint();   
     }
     
-    
-    
-//    private void setImageLabel(JLabel labelName, String root){
-//        ImageIcon image = new ImageIcon(root);
-//        Icon icon = new ImageIcon(image.getImage().getScaledInstance(labelName.getWidth(), labelName.getHeight(), Image.SCALE_DEFAULT));
-//        labelName.setIcon(icon);
-//        this.repaint();
-//        
-//        
-//    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton bAceptar;
-    private javax.swing.JLabel imgMedellín;
     private javax.swing.JComboBox<String> jComboBoxCONCIERTO;
     private javax.swing.JComboBox<String> jComboBoxCONFERENCIAS;
     private javax.swing.JComboBox<String> jComboBoxDEPORTE;
     private javax.swing.JComboBox<String> jComboBoxEXPOSICIONES;
     private javax.swing.JComboBox<String> jComboBoxTEATRO;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel ventana2_1;
     // End of variables declaration//GEN-END:variables
 }
