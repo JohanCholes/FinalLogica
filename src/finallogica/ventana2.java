@@ -50,14 +50,17 @@ public class ventana2 extends javax.swing.JFrame {
         //iniciar con ventana dependiendo de que se selecciono en combobox ciudad
         if (ventana1.comboCiudad.equals("Medellín")) {
             ciudadEspecifica = "medellin";
+            ventana1.vectorDatos[5] = ventana1.comboCiudad.toString();
             medellin p1 = new medellin();
             cambiarContent(p1);
         }else if (ventana1.comboCiudad.equals("Barranquilla")) {
             ciudadEspecifica ="barranquilla";
+            ventana1.vectorDatos[5] = ventana1.comboCiudad.toString();
             barranquilla p1 = new barranquilla();
             cambiarContent(p1);
         }else if(ventana1.comboCiudad.equals("Bogotá")){
             ciudadEspecifica = "bogota";
+            ventana1.vectorDatos[5] = ventana1.comboCiudad.toString();
             Bogotá p1 = new Bogotá();
             cambiarContent(p1);
         }

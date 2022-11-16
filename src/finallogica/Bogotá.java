@@ -4,6 +4,7 @@
  */
 package finallogica;
 import static finallogica.barranquilla.eventoGrafica;
+import static finallogica.medellin.eventoGrafica;
 import static finallogica.medellin.showEspecifico;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -205,19 +206,24 @@ public class Bogotá extends javax.swing.JPanel {
             //asigno el nombre del show a la variable showEspecifico
             if(jComboBoxDEPORTE.getSelectedItem().toString()!="SELECCIONAR"){
                 eventoGrafica = "DEPORTE";
-                showEspecifico = jComboBoxDEPORTE.getSelectedItem().toString();    
+                showEspecifico = jComboBoxDEPORTE.getSelectedItem().toString();  
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxTEATRO.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "TEATRO";
                 showEspecifico = jComboBoxTEATRO.getSelectedItem().toString();  
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxCONCIERTO.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "CONCIERTO";
                 showEspecifico = jComboBoxCONCIERTO.getSelectedItem().toString();  
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxCONFERENCIAS.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "CONFERENCIAS";
-                showEspecifico = jComboBoxCONFERENCIAS.getSelectedItem().toString();  
+                showEspecifico = jComboBoxCONFERENCIAS.getSelectedItem().toString();
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxEXPOSICIONES.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "EXPOSICIONES";
-                showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString();  
+                showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString(); 
+                ventana1.vectorDatos[7] = showEspecifico;
             }
             //abrir la ventanaComprar
             ventanaComprar p1 = new ventanaComprar();

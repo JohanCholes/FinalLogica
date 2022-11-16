@@ -7,6 +7,9 @@ package finallogica;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import javax.swing.JOptionPane;
 import javax.swing.SpinnerNumberModel;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartPanel;
@@ -24,6 +27,9 @@ public class ventanaComprar extends javax.swing.JPanel {
     /**
      * Creates new form ventanaComprar
      */
+    //variable que contendra el precio total
+    public static int precioTotal;
+    private static byte contadorQuemado;
     public ventanaComprar() {
         initComponents();
         //se iniciara la ventana con algunas variables disponibles
@@ -41,13 +47,12 @@ public class ventanaComprar extends javax.swing.JPanel {
         nm.setMinimum(0);
         nm.setStepSize(1);
         jSpinner1.setModel(nm);
-        //precio
-        labelPrecio.setText("PRECIO TOTAL: $100");
         //asigamos la direccion de la variable global
         fieldDireccion.setText(ventana1.direccion);
         //dependiendo de la ciudad donde este, se mostraran tres puntos fijos de venta
         switch(ventana2.ciudadEspecifica){
             case "medellin":
+                ventana1.vectorDatos[5] = "MEDELLIN";
                 comboPuntoVenta.removeAll();
                 comboPuntoVenta.addItem("Estación San Antonio");
                 comboPuntoVenta.addItem("Parque Belén");
@@ -55,14 +60,27 @@ public class ventanaComprar extends javax.swing.JPanel {
                 //agregar evento caracteristico de cada ciudad
                 if (medellin.showEspecifico.equals("FUTBOL") || medellin.showEspecifico.equals("VOLEIBOL") || medellin.showEspecifico.equals("TENNIS")){
                     comboPunto.addItem("Estadio Atanasio Girardot");
+                    ventana1.vectorDatos[6] = "DEPORTES";
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $50.000");
                 }else if(medellin.showEspecifico.equals("SANTA CLAUS") || medellin.showEspecifico.equals("CIEN AÑOS DE SOLEDAD") || medellin.showEspecifico.equals("OPERA")){
                     comboPunto.addItem("Teatro José Gutierrez Gómez");
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $70.000");
+                    ventana1.vectorDatos[6] = "TEATRO";
                 }else if(medellin.showEspecifico.equals("SILVESTRE DANGOND") || medellin.showEspecifico.equals("MALUMA") || medellin.showEspecifico.equals("BAD BUNNY")){
                     comboPunto.addItem("Plaza de Toreos La Macarena");
+                    ventana1.vectorDatos[6] = "CONCIERTOS";
                 }else if(medellin.showEspecifico.equals("PYTHON 2.0") || medellin.showEspecifico.equals("APRENDE TRAIDING") || medellin.showEspecifico.equals("CRISTO ESTA AQUI")){
                   comboPunto.addItem("Universidad Eafit");
+                  ventana1.vectorDatos[6] = "CONFERENCIAS";
+                  //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $70.000");
                 }else if(medellin.showEspecifico.equals("LA MONA LISA") || medellin.showEspecifico.equals("LA MOMIA") || medellin.showEspecifico.equals("LA ULTIMA CENA")){
                     comboPunto.addItem("Museo de Arte Moderno");
+                    ventana1.vectorDatos[6] = "EXPOSICIONES";
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $80.000");
                 }
                 //fecha dependiendo del evento
                 switch (medellin.showEspecifico) {
@@ -86,12 +104,18 @@ public class ventanaComprar extends javax.swing.JPanel {
                         break;
                     case "SILVESTRE DANGOND":
                         fieldFechaEvento.setText("Fecha: 9/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $750.000");
                         break;
                     case "MALUMA":
                         fieldFechaEvento.setText("Fecha: 10/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $1.000.000");
                         break;
                     case "BAD BUNNY":
                         fieldFechaEvento.setText("Fecha: 11/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $1.500.000");
                         break;
                     case "PYTHON 2.0":
                         fieldFechaEvento.setText("Fecha: 20/06/2023 Hora: 9:00am");
@@ -114,6 +138,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                 }
                 break;
             case "barranquilla":
+                ventana1.vectorDatos[5] = "BARRANQUILLA";
                 comboPuntoVenta.removeAll();
                 comboPuntoVenta.addItem("La ventana del mundo");
                 comboPuntoVenta.addItem("Olímpica La 30");
@@ -121,14 +146,27 @@ public class ventanaComprar extends javax.swing.JPanel {
                 //agregar evento caracteristico de cada ciudad
                  if (medellin.showEspecifico.equals("FUTBOL") || medellin.showEspecifico.equals("VOLEIBOL") || medellin.showEspecifico.equals("TENNIS")){
                     comboPunto.addItem("Estadio Metropolitano");
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $50.000");
+                    ventana1.vectorDatos[6] = "DEPORTES";
                 }else if(medellin.showEspecifico.equals("SANTA CLAUS") || medellin.showEspecifico.equals("CIEN AÑOS DE SOLEDAD") || medellin.showEspecifico.equals("OPERA")){
                     comboPunto.addItem("teatro José Consuegra Higgins");
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $70.000");
+                    ventana1.vectorDatos[6] = "TEATRO";
                 }else if(medellin.showEspecifico.equals("SILVESTRE DANGOND") || medellin.showEspecifico.equals("MALUMA") || medellin.showEspecifico.equals("BAD BUNNY")){
                     comboPunto.addItem("Puerta de Oro");
+                    ventana1.vectorDatos[6] = "CONCIERTOS";
                 }else if(medellin.showEspecifico.equals("PYTHON 2.0") || medellin.showEspecifico.equals("APRENDE TRAIDING") || medellin.showEspecifico.equals("CRISTO ESTA AQUI")){
                   comboPunto.addItem("Universidad del Norte");
+                  ventana1.vectorDatos[6] = "CONFERENCIAS";
+                  //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $70.000");
                 }else if(medellin.showEspecifico.equals("LA MONA LISA") || medellin.showEspecifico.equals("LA MOMIA") || medellin.showEspecifico.equals("LA ULTIMA CENA")){
                     comboPunto.addItem("Museo Mapuka");
+                    ventana1.vectorDatos[6] = "EXPOSICIONES";
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $80.000");
                 }
                   //fecha dependiendo del evento
                  switch (medellin.showEspecifico) {
@@ -152,12 +190,18 @@ public class ventanaComprar extends javax.swing.JPanel {
                         break;
                     case "SILVESTRE DANGOND":
                         fieldFechaEvento.setText("Fecha: 27/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $750.000");
                         break;
                     case "MALUMA":
                         fieldFechaEvento.setText("Fecha: 28/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $1.000.000");
                         break;
                     case "BAD BUNNY":
                         fieldFechaEvento.setText("Fecha: 29/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $1.500.000");
                         break;
                     case "PYTHON 2.0":
                         fieldFechaEvento.setText("Fecha: 10/06/2023 Hora: 9:00am");
@@ -180,6 +224,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                 }
                 break;
             case "bogota":
+                ventana1.vectorDatos[5] = "BOGOTA";
                 comboPuntoVenta.removeAll();
                 comboPuntoVenta.addItem("Plaza Bolívar");
                 comboPuntoVenta.addItem("Estación Caracas");
@@ -187,14 +232,27 @@ public class ventanaComprar extends javax.swing.JPanel {
                 //agregar evento caracteristico de cada ciudad
                  if (medellin.showEspecifico.equals("FUTBOL") || medellin.showEspecifico.equals("VOLEIBOL") || medellin.showEspecifico.equals("TENNIS")){
                     comboPunto.addItem("Parque Metropolitano El Tunal");
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $50.000");
+                    ventana1.vectorDatos[6] = "DEPORTES";
                 }else if(medellin.showEspecifico.equals("SANTA CLAUS") || medellin.showEspecifico.equals("CIEN AÑOS DE SOLEDAD") || medellin.showEspecifico.equals("OPERA")){
                     comboPunto.addItem("Teatro Julio Mario Santo Domingo");
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $70.000");
+                    ventana1.vectorDatos[6] = "TEATRO";
                 }else if(medellin.showEspecifico.equals("SILVESTRE DANGOND") || medellin.showEspecifico.equals("MALUMA") || medellin.showEspecifico.equals("BAD BUNNY")){
                     comboPunto.addItem("Movistar Arena");
+                    ventana1.vectorDatos[6] = "CONCIERTOS";
                 }else if(medellin.showEspecifico.equals("PYTHON 2.0") || medellin.showEspecifico.equals("APRENDE TRAIDING") || medellin.showEspecifico.equals("CRISTO ESTA AQUI")){
                   comboPunto.addItem("Universidad de los Andes");
+                  ventana1.vectorDatos[6] = "CONFERENCIAS";
+                  //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $70.000");
                 }else if(medellin.showEspecifico.equals("LA MONA LISA") || medellin.showEspecifico.equals("LA MOMIA") || medellin.showEspecifico.equals("LA ULTIMA CENA")){
                     comboPunto.addItem("Palacio de Justicia");
+                    ventana1.vectorDatos[6] = "EXPOSICIONES";
+                    //precio de la boleta
+                    labelPrecio.setText("PRECIOxU: $80.000");
                 }
                   //fecha dependiendo del evento
                  switch (medellin.showEspecifico) {
@@ -218,12 +276,18 @@ public class ventanaComprar extends javax.swing.JPanel {
                         break;
                     case "SILVESTRE DANGOND":
                         fieldFechaEvento.setText("Fecha: 15/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $750.000");
                         break;
                     case "MALUMA":
                         fieldFechaEvento.setText("Fecha: 17/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $1.000.000");
                         break;
                     case "BAD BUNNY":
                         fieldFechaEvento.setText("Fecha: 18/08/2023 Hora 9:00pm");
+                        //precio de la boleta
+                        labelPrecio.setText("PRECIOxU: $1.500.000");
                         break;
                     case "PYTHON 2.0":
                         fieldFechaEvento.setText("Fecha: 1/06/2023 Hora: 9:00am");
@@ -1359,7 +1423,7 @@ public class ventanaComprar extends javax.swing.JPanel {
         jSpinner1.setEnabled(true);
         fieldCelular.setEnabled(true);
         comboPunto.setEnabled(true);
-        comboPuntoVenta.setEnabled(false);
+        comboPuntoVenta.setEnabled(true);
         labelPagoAdicional.setText("");
         
         //quitamos las otras opciones con un condicional
@@ -1422,7 +1486,7 @@ public class ventanaComprar extends javax.swing.JPanel {
     }//GEN-LAST:event_jSpinner1AncestorAdded
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // cambiar ventana para que siga comprando
         if (ventana2.ciudadEspecifica.equals("medellin")) {
             ventanaEspectaculo vent1 = new ventanaEspectaculo();
             vent1.setSize(398, 470);
@@ -1448,6 +1512,313 @@ public class ventanaComprar extends javax.swing.JPanel {
             jScrollPane2.revalidate();
             jScrollPane2.repaint();
         }
+        
+        //gestion de boletas y todo
+        
+        //SI LA BOLETA ES COMPRADA O RESRVADA
+        if (checkComprar.isSelected()==false) {
+            ventana1.vectorDatos[8] = "";
+        }else{
+            ventana1.vectorDatos[8] = "COMPRADA";
+        }
+        if (checkReservar.isSelected()==false) {
+            ventana1.vectorDatos[8] = "";
+        }else{
+            ventana1.vectorDatos[8] = "RESERVADA";
+        }
+        
+        //DOMICILIO SI/NO
+         if (checkDomicilio.isSelected()==false) {
+            ventana1.vectorDatos[9] = "NO";
+        }else{
+            ventana1.vectorDatos[9] = "SI";
+        }       
+        //CANTIDAD DE BOLETAS
+        ventana1.vectorDatos[10] = jSpinner1.getValue().toString();
+        
+        //PRECIO TOTAL
+        if (Integer.parseInt(ventana1.vectorDatos[10])>0) {
+            if (medellin.eventoGrafica.equals("DEPORTE")) {
+                //si es domiciolio o no
+                if (ventana1.vectorDatos[9].equals("SI")) {
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10])*50000);
+                    precioTotal+=((Integer.parseInt(ventana1.vectorDatos[10])*50000)*0.08)+5000;
+                    ventana1.vectorDatos[11]=String.valueOf(precioTotal);
+                }else{
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10])*50000);
+                    precioTotal+=(Integer.parseInt(ventana1.vectorDatos[10])*50000)*0.08;
+                    ventana1.vectorDatos[11]=String.valueOf(precioTotal);
+                }
+            }else if(medellin.eventoGrafica.equals("TEATRO")){
+                //si es domiciolio o no
+                if (ventana1.vectorDatos[9].equals("SI")) {
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10])*70000);
+                    precioTotal+=((Integer.parseInt(ventana1.vectorDatos[10])*70000)*0.08)+5000;
+                    ventana1.vectorDatos[11]=String.valueOf(precioTotal);
+                }else{
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10])*70000);
+                    precioTotal+=(Integer.parseInt(ventana1.vectorDatos[10])*70000)*0.08;
+                    ventana1.vectorDatos[11]=String.valueOf(precioTotal);
+                }
+            }else if(medellin.eventoGrafica.equals("CONCIERTO")){
+                //si es domilicio
+                if (ventana1.vectorDatos[9].equals("SI")) {
+                    switch (medellin.showEspecifico) {
+                        case "SILVESTRE DANGOND":
+                            precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 750000);
+                            precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) * 750000) * 0.08) + 5000;
+                            ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                            break;
+                        case "MALUMA":
+                            precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 1000000);
+                            precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) * 1000000) * 0.08) + 5000;
+                            ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                            break;
+                        case "BAD BUNNY":
+                            precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 1500000);
+                            precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) * 1500000) * 0.08) + 5000;
+                            ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                            break;
+                    }
+                } else {
+                    switch (medellin.showEspecifico) {
+                        case "SILVESTRE DANGOND":
+                            precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 1000000);
+                            precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) *  1000000) * 0.08);
+                            ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                            break;
+                        case "MALUMA":
+                            precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) *  1000000);
+                            precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) *  1000000) * 0.08);
+                            ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                            break;
+                        case "BAD BUNNY":
+                            precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 1500000);
+                            precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) *1500000) * 0.08);
+                            ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                            break;
+                    }
+                }
+            }else if (medellin.eventoGrafica.equals("CONFERENCIAS")) {
+                //si es domiciolio o no
+                if (ventana1.vectorDatos[9].equals("SI")) {
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 70000);
+                    precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) * 70000) * 0.08) + 5000;
+                    ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                } else {
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 70000);
+                    precioTotal += (Integer.parseInt(ventana1.vectorDatos[10]) * 70000) * 0.08;
+                    ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                }
+            }else if(medellin.eventoGrafica.equals("EXPOSICIONES")){
+                //si es domiciolio o no
+                if (ventana1.vectorDatos[9].equals("SI")) {
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 80000);
+                    precioTotal += ((Integer.parseInt(ventana1.vectorDatos[10]) * 80000) * 0.08) + 5000;
+                    ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                } else {
+                    precioTotal = (Integer.parseInt(ventana1.vectorDatos[10]) * 80000);
+                    precioTotal += (Integer.parseInt(ventana1.vectorDatos[10]) * 80000) * 0.08;
+                    ventana1.vectorDatos[11] = String.valueOf(precioTotal);
+                }
+            }
+        }
+        
+        //celular
+        ventana1.vectorDatos[12]= fieldCelular.getText();
+        //sitio del evento
+        ventana1.vectorDatos[13] = comboPunto.getSelectedItem().toString();
+        //fecha
+        switch(ventana2.ciudadEspecifica){
+            case "medellin":
+                //fecha dependiendo del evento
+                switch (medellin.showEspecifico) {
+                    case "FUTBOL":
+                        ventana1.vectorDatos[14]= ("Fecha: 7/09/2023  Hora7:00am");
+                        break;
+                    case "VOLEIBOL":
+                        ventana1.vectorDatos[14]= ("Fecha: 8/09/2023 Hora: 7:00am");
+                        break;
+                    case "TENNIS":
+                        ventana1.vectorDatos[14]= ("Fecha: 9/09/2023 Hora: 7:00am");
+                        break;
+                    case "SANTA CLAUS":
+                        ventana1.vectorDatos[14]= ("Fecha: 6/10/2023 Hora: 7:00pm");
+                        break;
+                    case "CIEN AÑOS DE SOLEDAD":
+                        ventana1.vectorDatos[14]= ("Fecha: 9/10/2023 Hora: 7:00pm");
+                        break;
+                    case "OPERA":
+                        ventana1.vectorDatos[14]= ("Fecha: 12/10/2023 Hora: 7:00pm");
+                        break;
+                    case "SILVESTRE DANGOND":
+                        ventana1.vectorDatos[14]= ("Fecha: 9/08/2023 Hora 9:00pm");
+               
+                        break;
+                    case "MALUMA":
+                        ventana1.vectorDatos[14]= ("Fecha: 10/08/2023 Hora 9:00pm");
+                    
+                        break;
+                    case "BAD BUNNY":
+                        ventana1.vectorDatos[14]= ("Fecha: 11/08/2023 Hora 9:00pm");
+                  
+                        break;
+                    case "PYTHON 2.0":
+                        ventana1.vectorDatos[14]= ("Fecha: 20/06/2023 Hora: 9:00am");
+                        break;
+                    case "APRENDE TRAIDING":
+                        ventana1.vectorDatos[14]= ("Fecha: 21/06/2023 Hora: 9:00am");
+                        break;
+                    case "CRISTO ESTA AQUI":
+                        ventana1.vectorDatos[14]= ("Fecha: 22/06/2023 Hora: 9:00am");
+                        break;
+                    case "LA MONA LISA":
+                        ventana1.vectorDatos[14]= ("Fecha: 2/07/2023 Hora: 4:00pm");
+                        break;
+                    case "LA MOMIA":
+                        ventana1.vectorDatos[14]= ("Fecha: 3/07/2023 Hora: 4:00pm");
+                        break;
+                    case "LA ULTIMA CENA":
+                        ventana1.vectorDatos[14]= ("Fecha: 4/07/2023 Hora: 4:00pm");
+                        break;
+                }
+                break;
+            case "barranquilla":
+                  //fecha dependiendo del evento
+                 switch (medellin.showEspecifico) {
+                    case "FUTBOL":
+                        ventana1.vectorDatos[14]= ("Fecha: 20/09/2023 Hora: 7:00am");
+                        break;
+                    case "VOLEIBOL":
+                        ventana1.vectorDatos[14]= ("Fecha: 21/09/2023 Hora: 7:00am");
+                        break;
+                    case "TENNIS":
+                        ventana1.vectorDatos[14]= ("Fecha: 22/09/2023 Hora: 7:00am");
+                        break;
+                    case "SANTA CLAUS":
+                        ventana1.vectorDatos[14]= ("Fecha: 20/10/2023 Hora: 7:00pm");
+                        break;
+                    case "CIEN AÑOS DE SOLEDAD":
+                        ventana1.vectorDatos[14]= ("Fecha: 22/10/2023 Hora: 7:00pm");
+                        break;
+                    case "OPERA":
+                        ventana1.vectorDatos[14]= ("Fecha: 23/10/2023 Hora: 7:00pm");
+                        break;
+                    case "SILVESTRE DANGOND":
+                        ventana1.vectorDatos[14]= ("Fecha: 27/08/2023 Hora 9:00pm");
+           
+                        break;
+                    case "MALUMA":
+                        ventana1.vectorDatos[14]= ("Fecha: 28/08/2023 Hora 9:00pm");
+                   
+                        break;
+                    case "BAD BUNNY":
+                        ventana1.vectorDatos[14]= ("Fecha: 29/08/2023 Hora 9:00pm");
+                 
+                        break;
+                    case "PYTHON 2.0":
+                        ventana1.vectorDatos[14]= ("Fecha: 10/06/2023 Hora: 9:00am");
+                        break;
+                    case "APRENDE TRAIDING":
+                        ventana1.vectorDatos[14]= ("Fecha: 11/06/2023 Hora: 9:00am");
+                        break;
+                    case "CRISTO ESTA AQUI":
+                        ventana1.vectorDatos[14]= ("Fecha: 12/06/2023 Hora: 9:00am");
+                        break;
+                    case "LA MONA LISA":
+                        ventana1.vectorDatos[14]= ("Fecha: 13/07/2023 Hora: 4:00pm");
+                        break;
+                    case "LA MOMIA":
+                        ventana1.vectorDatos[14]= ("Fecha: 14/07/2023 Hora: 4:00pm");
+                        break;
+                    case "LA ULTIMA CENA":
+                        ventana1.vectorDatos[14]= ("Fecha: 15/07/2023 Hora: 4:00pm");
+                        break;
+                }
+                break;
+            case "bogota":
+                  //fecha dependiendo del evento
+                 switch (medellin.showEspecifico) {
+                    case "FUTBOL":
+                        ventana1.vectorDatos[14]= ("Fecha: 13/09/2023 Hora: 7:00am'");
+                        break;
+                    case "VOLEIBOL":
+                        ventana1.vectorDatos[14]= ("Fecha: 14/09/2023 Hora: 7:00am");
+                        break;
+                    case "TENNIS":
+                        ventana1.vectorDatos[14]= ("Fecha: 15/09/2023 Hora: 7:00am");
+                        break;
+                    case "SANTA CLAUS":
+                        ventana1.vectorDatos[14]= ("Fecha: 27/10/2023 Hora: 7:00pm");
+                        break;
+                    case "CIEN AÑOS DE SOLEDAD":
+                        ventana1.vectorDatos[14]= ("Fecha: 28/10/2023 Hora: 7:00pm");
+                        break;
+                    case "OPERA":
+                        ventana1.vectorDatos[14]= ("Fecha: 29/10/2023 Hora: 7:00pm");
+                        break;
+                    case "SILVESTRE DANGOND":
+                        ventana1.vectorDatos[14]= ("Fecha: 15/08/2023 Hora 9:00pm");
+                     
+                        break;
+                    case "MALUMA":
+                        ventana1.vectorDatos[14]= ("Fecha: 17/08/2023 Hora 9:00pm");
+               
+                        break;
+                    case "BAD BUNNY":
+                        ventana1.vectorDatos[14]= ("Fecha: 18/08/2023 Hora 9:00pm");
+                    
+                        break;
+                    case "PYTHON 2.0":
+                        ventana1.vectorDatos[14]= ("Fecha: 1/06/2023 Hora: 9:00am");
+                        break;
+                    case "APRENDE TRAIDING":
+                        ventana1.vectorDatos[14]= ("Fecha: 2/06/2023 Hora: 9:00am");
+                        break;
+                    case "CRISTO ESTA AQUI":
+                        ventana1.vectorDatos[14]= ("Fecha: 2/06/2023 Hora: 9:00am");
+                        break;
+                    case "LA MONA LISA":
+                        ventana1.vectorDatos[14]= ("Fecha: 22/07/2023 Hora: 4:00pm");
+                        break;
+                    case "LA MOMIA":
+                        ventana1.vectorDatos[14]= ("Fecha: 23/07/2023 Hora: 4:00pm");
+                        break;
+                    case "LA ULTIMA CENA":
+                        ventana1.vectorDatos[14]= ("Fecha: 24/07/2023 Hora: 4:00pm");
+                        break;
+                }
+                break;
+        }
+        JOptionPane.showMessageDialog(null, "Precio total: "+ ventana1.vectorDatos[11]);
+    
+        //necesitamos declarar las variables que me permitiran escribir el archivo.
+        try {
+            //si le agregamsos ,true sobreescribe el archivo
+            FileWriter arch_totales = new FileWriter("C:/Users/Johan Choles/Desktop/logica/proLog/datos.csv");
+            PrintWriter linea_imp = new PrintWriter(arch_totales);
+
+            contadorQuemado = 0;
+            if (contadorQuemado < 1) {
+                for (byte i = 0; i < 15; i++) {
+                    linea_imp.print(ventana1.datosQuemados[i] + ";");
+                }
+                linea_imp.println("");
+                contadorQuemado++;
+                //recorremos el vector datos
+                for (byte i = 0; i < 15; i++) {
+                    linea_imp.print(ventana1.vectorDatos[i] + ";");
+                }
+                linea_imp.close();
+
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error llenando el archivo:" + e);
+        }
+
+        //creamos un contador que me permitira iniciar los datos quemados para el archivo
+        
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void comboPuntoVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPuntoVentaActionPerformed

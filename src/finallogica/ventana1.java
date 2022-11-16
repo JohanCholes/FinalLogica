@@ -18,6 +18,10 @@ public class ventana1 extends javax.swing.JFrame {
     /** Creates new form ventana1 */
     public static String comboCiudad ="";
     public static String direccion="";
+    public static String[] vectorDatos = new String[15];
+    public static String[] datosQuemados  = {"NOMBRE","APELLIDOS","CORREO","EDAD","DIRECCION",
+        "CIUDAD","ESPECTACULO","EVENTO","TIPO DE BOLETA","DOMICILIO","CANTIDAD DE BOLETAS",
+        "PRECIO TOTAL","CELULAR","SITIO DEL EVENTO","FECHA"};
     public ventana1() {
         initComponents();
           //para el icono
@@ -26,7 +30,7 @@ public class ventana1 extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         TextPrompt placeHolder = new TextPrompt("NOMBRES", campoNombre);
         placeHolder = new TextPrompt("APELLIDOS", campoApellidos);
-        placeHolder = new TextPrompt("CORREO ELECRONICO", jTextField1);
+        placeHolder = new TextPrompt("CORREO ELECRONICO", campoCorreo);
         placeHolder = new TextPrompt("CÉDULA", campoCédula);
 //        placeHolder = new TextPrompt("EDAD", jComboBox1);
         placeHolder = new TextPrompt("DIRECCIÓN", campoDirección);
@@ -55,7 +59,7 @@ public class ventana1 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         campoNombre = new javax.swing.JTextField();
         campoApellidos = new javax.swing.JTextField();
-        jTextField1 = new javax.swing.JTextField();
+        campoCorreo = new javax.swing.JTextField();
         campoCédula = new javax.swing.JTextField();
         campoDirección = new javax.swing.JTextField();
         JComboCiudad = new javax.swing.JComboBox<>();
@@ -123,8 +127,8 @@ public class ventana1 extends javax.swing.JFrame {
             }
         });
 
-        jTextField1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jTextField1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        campoCorreo.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
+        campoCorreo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
         campoCédula.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
         campoCédula.addActionListener(new java.awt.event.ActionListener() {
@@ -200,7 +204,7 @@ public class ventana1 extends javax.swing.JFrame {
                                         .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(40, 40, 40)
                                         .addComponent(campoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campoCorreo, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(JComboCiudad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addComponent(campoDirección, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addContainerGap())
@@ -228,7 +232,7 @@ public class ventana1 extends javax.swing.JFrame {
                             .addComponent(campoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(campoApellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(campoCorreo, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(23, 23, 23)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(campoCédula, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -306,6 +310,15 @@ public class ventana1 extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "Revise que todos los campos de datos esten completos\n");
         //asignamos la direccion a la variable global direccion.
         direccion=campoDirección.getText();
+        
+        //asignamos los datos al vector
+        vectorDatos[0] = campoNombre.getText().toString();
+        vectorDatos[1] = campoApellidos.getText().toString();
+        vectorDatos[2] = campoCorreo.getText().toString();
+        vectorDatos[3] = campoEdad.getSelectedItem().toString();
+        //LA DIRECCION SE TOMA EN LA VENTANA COMPRAR
+//        vectorDatos[4] = campoDirección.getText().toString();
+        
        
     }//GEN-LAST:event_botonContinuarActionPerformed
 
@@ -415,6 +428,7 @@ public class ventana1 extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> JComboCiudad;
     private javax.swing.JButton botonContinuar;
     private javax.swing.JTextField campoApellidos;
+    private javax.swing.JTextField campoCorreo;
     private javax.swing.JTextField campoCédula;
     private javax.swing.JTextField campoDirección;
     private javax.swing.JComboBox<String> campoEdad;
@@ -425,7 +439,6 @@ public class ventana1 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 
 }

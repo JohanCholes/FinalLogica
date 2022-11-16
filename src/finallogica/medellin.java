@@ -204,18 +204,23 @@ public class medellin extends javax.swing.JPanel {
             if(jComboBoxDEPORTE.getSelectedItem().toString()!="SELECCIONAR"){
                 eventoGrafica = "DEPORTE";
                 showEspecifico = jComboBoxDEPORTE.getSelectedItem().toString();    
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxTEATRO.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "TEATRO";
                 showEspecifico = jComboBoxTEATRO.getSelectedItem().toString();  
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxCONCIERTO.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "CONCIERTO";
                 showEspecifico = jComboBoxCONCIERTO.getSelectedItem().toString();  
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxCONFERENCIAS.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "CONFERENCIAS";
                 showEspecifico = jComboBoxCONFERENCIAS.getSelectedItem().toString();  
+                ventana1.vectorDatos[7] = showEspecifico;
             }else if(jComboBoxEXPOSICIONES.getSelectedItem().toString()!="SELECCIONAR"){
                  eventoGrafica = "EXPOSICIONES";
-                showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString();  
+                showEspecifico = jComboBoxEXPOSICIONES.getSelectedItem().toString();
+                ventana1.vectorDatos[7] = showEspecifico;
             }
             //abrir la ventanaComprar
             ventanaComprar p1 = new ventanaComprar();
