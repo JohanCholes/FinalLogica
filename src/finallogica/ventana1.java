@@ -174,6 +174,15 @@ public class ventana1 extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imagenPrincipal-PhotoRoom.png"))); // NOI18N
         jLabel2.setText("jLabel1");
+        jLabel2.addAncestorListener(new javax.swing.event.AncestorListener() {
+            public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
+                jLabel2AncestorAdded(evt);
+            }
+            public void ancestorMoved(javax.swing.event.AncestorEvent evt) {
+            }
+            public void ancestorRemoved(javax.swing.event.AncestorEvent evt) {
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -362,6 +371,10 @@ public class ventana1 extends javax.swing.JFrame {
     private void campoDirecciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campoDirecciónActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_campoDirecciónActionPerformed
+
+    private void jLabel2AncestorAdded(javax.swing.event.AncestorEvent evt) {//GEN-FIRST:event_jLabel2AncestorAdded
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jLabel2AncestorAdded
 
     /**
      * @param args the command line arguments
