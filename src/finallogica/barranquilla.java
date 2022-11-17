@@ -56,7 +56,7 @@ public class barranquilla extends javax.swing.JPanel {
         ventana2_1.setBackground(new java.awt.Color(173, 189, 252));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel2.setForeground(new java.awt.Color(255, 158, 50));
         jLabel2.setText("ESPECTACULOS");
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
@@ -170,13 +170,14 @@ public class barranquilla extends javax.swing.JPanel {
         ventana2_1.setBounds(450, 0, 400, 470);
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 38)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 158, 50));
         jLabel1.setText("BARRANQUILLA");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(73, 32, 292, 42);
 
         imgMedellín.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imgBarranquilla.jpg"))); // NOI18N
         imgMedellín.setText("imagenMedellín");
-        imgMedellín.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        imgMedellín.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 158, 50), 2, true));
         jPanel1.add(imgMedellín);
         imgMedellín.setBounds(47, 104, 340, 303);
 

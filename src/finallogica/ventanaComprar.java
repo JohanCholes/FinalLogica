@@ -27,9 +27,48 @@ public class ventanaComprar extends javax.swing.JPanel {
     /**
      * Creates new form ventanaComprar
      */
+    //VARIABLES PARA LAS BOLETAS
+    //variables para MEDELLIN
+    //deporte:
+    public static int medDeporFut = 100, medDeporFutResta = 0, medDeporVolei = 989, medDeporVoleiResta=0, medDeporTenis = 1000, medDeporTenisResta=0;
+    
+     //teatro:
+        public static int medTeaSanta=867, medTeaSantaResta=0,medTea100Soledad=123, medTea100SoledadResta=0,medTeaOpera=123, medTeaOperaResta=0;
+        //concierto:
+        public static int medConcieSilves=324,medConcieSilvesResta=0,medConcieMalu=987, medConcieMaluResta=0,medConcieBad=654, medConcieBadResta=0;
+        //conferencia:
+        public static int medConfePyhton=876, medConfePyhtonResta=0,medConfeTrading=130, medConfeTradingResta=0,medConfeCristo=868, medConfeCristoResta=0;
+        //exposiciones:
+        public static int medExpoMona=978,medExpoMonaResta=0,medExpoMomia=200,medExpoMomiaResta=0,medExpoUltima=80,medExpoUltimaResta=0;
+        //variables para QUILLA
+        //deporte:
+        public static int quillaDeporFut=670,quillaDeporFutResta=0,quillaDeporVolei=355,quillaDeporVoleiResta=0,quillaDeporTenis=240,quillaDeporTenisResta=0;
+        //teatro:
+        public static int quillaTeaSanta=960,quillaTeaSantaResta=0,quillaTea100Soledad=30,quillaTea100SoledadResta=0 ,quillaTeaOpera=100, quillaTeaOperaResta=0;
+        //concierto:
+        public static int quillaConcieSilves=890,quillaConcieSilvesResta=0,quillaConcieMalu=100,quillaConcieMaluResta=0,quillaConcieBad=1000,quillaConcieBadResta=0;
+        //conferencia:
+        public static int quillaConfePyhton=435,quillaConfePythonResta=0, quillaConfeTrading=100,quillaConfeTradingResta=0,quillaConfeCristo=1000, quillaConfeCristoResta=0;
+        //exposiciones:
+        public static int quillaExpoMona=800,quillaExpoMonaResta=0,quillaExpoMomia=1000,quillaExpoMomiaResta=0,quillaExpoUltima=300, quillaExpoUltimaResta=0;
+        //variables para BOGOTA
+        //deporte:
+        public static int bogoDeporFut=1000,bogoDeporFutResta=0,bogoDeporVolei=130,bogoDeporVoleiResta=0,bogoDeporTenis=360, bogoDeporTenisResta=0;
+        //teatro:
+        public static int bogoTeaSanta=900,bogoTeaSantaResta=0,bogoTea100Soledad=300,bogoTea100SoledadResta=0 ,bogoTeaOpera=1000,bogoTeaOperaResta=0;
+        //concierto:
+        public static int bogoConcieSilves=1300,bogoConcieSilvesResta=0,bogoConcieMalu=1600,bogoConcieMaluResta=0,bogoConcieBad=3000,bogoConcieBadResta=0;
+        //conferencia:
+        public static int bogoConfePyhton=140,bogoConfePythonResta=0,bogoConfeTrading=400,bogoConfeTradingResta=0,bogoConfeCristo=1000,bogoConfeCristoResta=0;
+        //exposiciones:
+        public static int bogoExpoMona=90,bogoExpoMonaResta=0,bogoExpoMomia=300,bogoExpoMomiaResta=0,bogoExpoUltima=8000,bogoExpoUltimaResta=0;
+
+    
+    
     //variable que contendra el precio total
     public static int precioTotal;
     private static byte contadorQuemado;
+    private static byte contadorQuemadoSeguir=1;
     public ventanaComprar() {
         initComponents();
         //se iniciara la ventana con algunas variables disponibles
@@ -172,6 +211,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                  switch (medellin.showEspecifico) {
                     case "FUTBOL":
                         fieldFechaEvento.setText("Fecha: 20/09/2023 Hora: 7:00am");
+                        medDeporFutResta++;
                         break;
                     case "VOLEIBOL":
                         fieldFechaEvento.setText("Fecha: 21/09/2023 Hora: 7:00am");
@@ -373,38 +413,8 @@ public class ventanaComprar extends javax.swing.JPanel {
     //creamos funcion que me iniciara la grafica dependiendo del deporte
     public void grafica(){
         //variables para MEDELLIN
-        //deporte:
-        int medDeporFut=1000,medDeporVolei=1000,medDeporTenis=1000;
-        //teatro:
-        int medTeaSanta=1000,medTea100Soledad=1000 ,medTeaOpera=1000;
-        //concierto:
-        int medConcieSilves=1000,medConcieMalu=1000,medConcieBad=1000;
-        //conferencia:
-        int medConfePyhton=1000,medConfeTrading=1000,medConfeCristo=1000;
-        //exposiciones:
-        int medExpoMona=1000,medExpoMomia=1000,medExpoUltima=1000;
-        //variables para QUILLA
-        //deporte:
-        int quillaDeporFut=1000,quillaDeporVolei=1000,quillaDeporTenis=1000;
-        //teatro:
-        int quillaTeaSanta=1000,quillaTea100Soledad=1000 ,quillaTeaOpera=1000;
-        //concierto:
-        int quillaConcieSilves=1000,quillaConcieMalu=1000,quillaConcieBad=1000;
-        //conferencia:
-        int quillaConfePyhton=1000,quillaConfeTrading=1000,quillaConfeCristo=1000;
-        //exposiciones:
-        int quillaExpoMona=1000,quillaExpoMomia=1000,quillaExpoUltima=1000;
-        //variables para BOGOTA
-        //deporte:
-        int bogoDeporFut=1000,bogoDeporVolei=1000,bogoDeporTenis=1000;
-        //teatro:
-        int bogoTeaSanta=1000,bogoTea100Soledad=1000 ,bogoTeaOpera=1000;
-        //concierto:
-        int bogoConcieSilves=1000,bogoConcieMalu=1000,bogoConcieBad=1000;
-        //conferencia:
-        int bogoConfePyhton=1000,bogoConfeTrading=1000,bogoConfeCristo=1000;
-        //exposiciones:
-        int bogoExpoMona=1000,bogoExpoMomia=1000,bogoExpoUltima=1000;
+       
+       
         //para iniciar la grafica dependiendo de que evento seleccionó usamos la variable creada en cada ciudad "eventoGrafica"
         //tambien usaremos la variable ciudadEspecifica creada en ventana2
         switch(ventana2.ciudadEspecifica){
@@ -415,7 +425,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                         switch(medellin.showEspecifico){
                             case "FUTBOL":
                                 //grafica con libreria jfreechart de barras
-                                int boletasVendidas = medDeporFut - (int) (Math.random() * 500);
+                                int boletasVendidas = medDeporFut - medDeporFutResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos = new DefaultCategoryDataset();
                                 datos.setValue(medDeporFut, "Boletas Disponibles", "");
@@ -442,7 +452,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "VOLEIBOL":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medDeporVolei - (int) (Math.random() * 500);
+                                boletasVendidas = medDeporVolei - medDeporVoleiResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
                                 datos1.setValue(medDeporVolei, "Boletas Disponibles", "");
@@ -469,7 +479,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "TENNIS":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medDeporTenis - (int) (Math.random() * 500);
+                                boletasVendidas = medDeporTenis - medDeporTenisResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
                                 datos2.setValue(medDeporTenis, "Boletas Disponibles", "");
@@ -500,7 +510,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                         switch(medellin.showEspecifico){
                             case "SANTA CLAUS":
                                 //grafica con libreria jfreechart de barras
-                                int boletasVendidas = medTeaSanta - (int) (Math.random() * 500);
+                                int boletasVendidas = medTeaSanta - medTeaSantaResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos = new DefaultCategoryDataset();
                                 datos.setValue(medTeaSanta, "Boletas Disponibles", "");
@@ -527,7 +537,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "CIEN AÑOS DE SOLEDAD":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medTea100Soledad - (int) (Math.random() * 500);
+                                boletasVendidas = medTea100Soledad - medTea100SoledadResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
                                 datos1.setValue(medTea100Soledad, "Boletas Disponibles", "");
@@ -554,7 +564,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "OPERA":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medTeaOpera - (int) (Math.random() * 500);
+                                boletasVendidas = medTeaOpera -medTeaOperaResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
                                 datos2.setValue(medTeaOpera, "Boletas Disponibles", "");
@@ -585,7 +595,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                         switch(medellin.showEspecifico){
                             case "SILVESTRE DANGOND":
                                 //grafica con libreria jfreechart de barras
-                                int boletasVendidas = medConcieSilves - (int) (Math.random() * 500);
+                                int boletasVendidas = medConcieSilves - medConcieSilvesResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos = new DefaultCategoryDataset();
                                 datos.setValue(medConcieSilves, "Boletas Disponibles", "");
@@ -612,7 +622,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "MALUMA":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medConcieMalu - (int) (Math.random() * 500);
+                                boletasVendidas = medConcieMalu - medConcieMaluResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
                                 datos1.setValue(medConcieMalu, "Boletas Disponibles", "");
@@ -639,7 +649,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "BAD BUNNY":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medConcieBad - (int) (Math.random() * 500);
+                                boletasVendidas = medConcieBad - medConcieBadResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
                                 datos2.setValue(medConcieBad, "Boletas Disponibles", "");
@@ -670,7 +680,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                         switch(medellin.showEspecifico){
                             case "PYTHON 2.0":
                                 //grafica con libreria jfreechart de barras
-                                int boletasVendidas = medConfePyhton - (int) (Math.random() * 500);
+                                int boletasVendidas = medConfePyhton - medConfePyhtonResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos = new DefaultCategoryDataset();
                                 datos.setValue(medConfePyhton, "Boletas Disponibles", "");
@@ -697,7 +707,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "APRENDE TRAIDING":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medConfeTrading - (int) (Math.random() * 500);
+                                boletasVendidas = medConfeTrading - medConfeTradingResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
                                 datos1.setValue(medConfeTrading, "Boletas Disponibles", "");
@@ -724,7 +734,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "CRISTO ESTA AQUI":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medConfeCristo - (int) (Math.random() * 500);
+                                boletasVendidas = medConfeCristo - medConfeCristoResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
                                 datos2.setValue(medConfeCristo, "Boletas Disponibles", "");
@@ -755,7 +765,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                         switch(medellin.showEspecifico){
                             case "LA MONA LISA":
                                 //grafica con libreria jfreechart de barras
-                                int boletasVendidas = medExpoMona - (int) (Math.random() * 500);
+                                int boletasVendidas = medExpoMona - medExpoMonaResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos = new DefaultCategoryDataset();
                                 datos.setValue(medExpoMona, "Boletas Disponibles", "");
@@ -782,7 +792,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "LA MOMIA":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medExpoMomia - (int) (Math.random() * 500);
+                                boletasVendidas = medExpoMomia - medExpoMomiaResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
                                 datos1.setValue(medExpoMomia, "Boletas Disponibles", "");
@@ -809,7 +819,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "LA ULTIMA CENA":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = medExpoUltima - (int) (Math.random() * 500);
+                                boletasVendidas = medExpoUltima - medExpoUltimaResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
                                 datos2.setValue(medExpoUltima, "Boletas Disponibles", "");
@@ -845,7 +855,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                         switch(medellin.showEspecifico){
                             case "FUTBOL":
                                 //grafica con libreria jfreechart de barras
-                                int boletasVendidas = quillaDeporFut - (int) (Math.random() * 500);
+                                int boletasVendidas = quillaDeporFut - quillaDeporFutResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos = new DefaultCategoryDataset();
                                 datos.setValue(quillaDeporFut, "Boletas Disponibles", "");
@@ -872,7 +882,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "VOLEIBOL":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = quillaDeporVolei - (int) (Math.random() * 500);
+                                boletasVendidas = quillaDeporVolei - quillaDeporVoleiResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
                                 datos1.setValue(quillaDeporVolei, "Boletas Disponibles", "");
@@ -899,7 +909,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "TENNIS":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = quillaDeporTenis - (int) (Math.random() * 500);
+                                boletasVendidas = quillaDeporTenis - quillaDeporTenisResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
                                 datos2.setValue(quillaDeporTenis, "Boletas Disponibles", "");
@@ -930,7 +940,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                         switch(medellin.showEspecifico){
                             case "SANTA CLAUS":
                                 //grafica con libreria jfreechart de barras
-                                int boletasVendidas = quillaTeaSanta - (int) (Math.random() * 500);
+                                int boletasVendidas = quillaTeaSanta - quillaTeaSantaResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos = new DefaultCategoryDataset();
                                 datos.setValue(quillaTeaSanta, "Boletas Disponibles", "");
@@ -957,7 +967,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "CIEN AÑOS DE SOLEDAD":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = quillaTea100Soledad - (int) (Math.random() * 500);
+                                boletasVendidas = quillaTea100Soledad - quillaTea100SoledadResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
                                 datos1.setValue(quillaTea100Soledad, "Boletas Disponibles", "");
@@ -984,7 +994,7 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 break;
                             case "OPERA":
                                 //grafica con libreria jfreechart de barras
-                                boletasVendidas = quillaTeaOpera - (int) (Math.random() * 500);
+                                boletasVendidas = quillaTeaOpera - quillaTeaOperaResta;
                                 //a continuacion, todo el proceso para la grafica de barras
                                 DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
                                 datos2.setValue(quillaTeaOpera, "Boletas Disponibles", "");
@@ -1014,30 +1024,255 @@ public class ventanaComprar extends javax.swing.JPanel {
                     case "CONCIERTO":
                         switch(medellin.showEspecifico){
                             case "SILVESTRE DANGOND":
+                                //grafica con libreria jfreechart de barras
+                                int boletasVendidas = quillaConcieSilves - quillaConcieSilvesResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(quillaConcieSilves, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "MALUMA":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = quillaConcieMalu - quillaConcieMaluResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(quillaConcieMalu, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "BAD BUNNY":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = quillaConcieBad - quillaConcieBadResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(quillaConcieBad, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
                     case "CONFERENCIAS":
                         switch(medellin.showEspecifico){
                             case "PYTHON 2.0":
+                                //grafica con libreria jfreechart de barras
+                                int boletasVendidas = quillaConfePyhton - quillaConfePythonResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(quillaConfePyhton, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "APRENDE TRAIDING":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = quillaConfeTrading - quillaConfeTradingResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(quillaConfeTrading, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "CRISTO ESTA AQUI":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = quillaConfeCristo - quillaConfeCristoResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(quillaConfeCristo, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
                     case "EXPOSICIONES":
                         switch(medellin.showEspecifico){
                             case "LA MONA LISA":
+                                //grafica con libreria jfreechart de barras
+                                int boletasVendidas = quillaExpoMona - quillaExpoMonaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(quillaExpoMona, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "LA MOMIA":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = quillaExpoMomia - quillaExpoMomiaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(quillaExpoMomia, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "LA ULTIMA CENA":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = quillaExpoUltima - quillaExpoUltimaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(quillaExpoUltima, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
@@ -1049,50 +1284,425 @@ public class ventanaComprar extends javax.swing.JPanel {
                     case "DEPORTE":
                         switch(medellin.showEspecifico){
                             case "FUTBOL":
+                                //grafica con libreria jfreechart de barras
+                                int boletasVendidas = bogoDeporFut - bogoDeporFutResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(bogoDeporFut, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "VOLEIBOL":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoDeporVolei - bogoDeporVoleiResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(bogoDeporVolei, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "TENNIS":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoDeporTenis - bogoDeporTenisResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(bogoDeporTenis, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
                     case "TEATRO":
                         switch(medellin.showEspecifico){
                             case "SANTA CLAUS":
+                                //grafica con libreria jfreechart de barras
+                                int boletasVendidas = bogoTeaSanta - bogoTeaSantaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(bogoTeaSanta, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "CIEN AÑOS DE SOLEDAD":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoTea100Soledad - bogoTea100SoledadResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(bogoTea100Soledad, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "OPERA":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoTeaOpera - bogoTeaOperaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(bogoTeaOpera, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
                     case "CONCIERTO":
                         switch(medellin.showEspecifico){
                             case "SILVESTRE DANGOND":
+                                //grafica con libreria jfreechart de barras
+                                int boletasVendidas = bogoConcieSilves - bogoConcieSilvesResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(bogoConcieSilves, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "MALUMA":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoConcieMalu - bogoConcieMaluResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(bogoConcieMalu, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "BAD BUNNY":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoConcieBad - bogoConcieBadResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(bogoConcieBad, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
                     case "CONFERENCIAS":
                         switch(medellin.showEspecifico){
                             case "PYTHON 2.0":
+                                 //grafica con libreria jfreechart de barras
+                                int boletasVendidas = bogoConfePyhton - bogoConfePythonResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(bogoConfePyhton, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "APRENDE TRAIDING":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoConfeTrading - bogoConfeTradingResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(bogoConfeTrading, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "CRISTO ESTA AQUI":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoConfeCristo - bogoConfeCristoResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(bogoConfeCristo, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
                     case "EXPOSICIONES":
                         switch(medellin.showEspecifico){
                             case "LA MONA LISA":
+                                //grafica con libreria jfreechart de barras
+                                int boletasVendidas = bogoExpoMona - bogoExpoMonaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos = new DefaultCategoryDataset();
+                                datos.setValue(bogoExpoMona, "Boletas Disponibles", "");
+                                datos.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                JFreeChart graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                ChartPanel panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "LA MOMIA":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoExpoMomia - bogoExpoMomiaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos1 = new DefaultCategoryDataset();
+                                datos1.setValue(bogoExpoMomia, "Boletas Disponibles", "");
+                                datos1.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos1, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                             case "LA ULTIMA CENA":
+                                //grafica con libreria jfreechart de barras
+                                boletasVendidas = bogoExpoUltima - bogoExpoUltimaResta;
+                                //a continuacion, todo el proceso para la grafica de barras
+                                DefaultCategoryDataset datos2 = new DefaultCategoryDataset();
+                                datos2.setValue(bogoExpoUltima, "Boletas Disponibles", "");
+                                datos2.setValue(boletasVendidas, "Boletas Vendidas", "");
+
+                                graficoBarras = ChartFactory.createBarChart(
+                                        "Boletas", //nombre del grafico
+                                        "", //nombre de las barras o columnas
+                                        "Cantidad", //nombre de la numeracion
+                                        datos2, //datos del grafico
+                                        PlotOrientation.VERTICAL, //orientacion
+                                        true, //legenda de barras individuales por color
+                                        true, //herramientas
+                                        false //url del grafico
+                                );
+                                graficoBarras.setBackgroundPaint(Color.WHITE);
+                                panel = new ChartPanel(graficoBarras);
+                                panel.setMouseWheelEnabled(true);
+                                panel.setPreferredSize(new Dimension(300, 160));
+
+                                grafiquita.setLayout(new BorderLayout());
+                                grafiquita.add(panel, BorderLayout.NORTH);
+                                repaint();
                                 break;
                         }
                         break;
@@ -1142,7 +1752,7 @@ public class ventanaComprar extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(169, 185, 247));
 
         showEspecifico.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
-        showEspecifico.setForeground(new java.awt.Color(0, 0, 0));
+        showEspecifico.setForeground(new java.awt.Color(255, 158, 50));
         showEspecifico.setText("showEspecifico");
         showEspecifico.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -1207,7 +1817,7 @@ public class ventanaComprar extends javax.swing.JPanel {
             .addGap(0, 160, Short.MAX_VALUE)
         );
 
-        jButton2.setText("jButton2");
+        jButton2.setText("COMPRAR");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -1215,7 +1825,7 @@ public class ventanaComprar extends javax.swing.JPanel {
         });
 
         checkComprar.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        checkComprar.setForeground(new java.awt.Color(0, 0, 0));
+        checkComprar.setForeground(new java.awt.Color(255, 255, 255));
         checkComprar.setText("COMPRAR");
         checkComprar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1224,7 +1834,7 @@ public class ventanaComprar extends javax.swing.JPanel {
         });
 
         checkReservar.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        checkReservar.setForeground(new java.awt.Color(0, 0, 0));
+        checkReservar.setForeground(new java.awt.Color(255, 255, 255));
         checkReservar.setText("RESERVAR");
         checkReservar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1233,7 +1843,7 @@ public class ventanaComprar extends javax.swing.JPanel {
         });
 
         checkDomicilio.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
-        checkDomicilio.setForeground(new java.awt.Color(0, 0, 0));
+        checkDomicilio.setForeground(new java.awt.Color(255, 255, 255));
         checkDomicilio.setText("DOMICILIO");
         checkDomicilio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -1242,7 +1852,7 @@ public class ventanaComprar extends javax.swing.JPanel {
         });
 
         labelCantidadBoletas.setFont(new java.awt.Font("Berlin Sans FB", 1, 18)); // NOI18N
-        labelCantidadBoletas.setForeground(new java.awt.Color(0, 0, 0));
+        labelCantidadBoletas.setForeground(new java.awt.Color(255, 158, 50));
         labelCantidadBoletas.setText("CANTIDAD DE BOLETAS");
 
         jSpinner1.setFont(new java.awt.Font("Berlin Sans FB", 0, 12)); // NOI18N
@@ -1261,19 +1871,19 @@ public class ventanaComprar extends javax.swing.JPanel {
         });
 
         labelPrecio.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        labelPrecio.setForeground(new java.awt.Color(0, 0, 0));
+        labelPrecio.setForeground(new java.awt.Color(255, 255, 255));
         labelPrecio.setText("Precio:  ");
         labelPrecio.setFocusCycleRoot(true);
 
         fieldDireccion.setText("dirección");
 
         labelDireccion.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        labelDireccion.setForeground(new java.awt.Color(0, 0, 0));
+        labelDireccion.setForeground(new java.awt.Color(255, 255, 255));
         labelDireccion.setText("Dirección:");
         labelDireccion.setToolTipText("");
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
         jLabel1.setText("Celular:");
 
         fieldCelular.setPreferredSize(new java.awt.Dimension(71, 29));
@@ -1285,23 +1895,23 @@ public class ventanaComprar extends javax.swing.JPanel {
         });
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Punto de reclamo:");
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
         jLabel3.setText("Sitio del evento:");
 
         fieldFechaEvento.setEditable(false);
         fieldFechaEvento.setBackground(new java.awt.Color(173, 189, 252));
         fieldFechaEvento.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        fieldFechaEvento.setForeground(new java.awt.Color(0, 0, 153));
+        fieldFechaEvento.setForeground(new java.awt.Color(83, 83, 255));
         fieldFechaEvento.setText("fechas");
         fieldFechaEvento.setAutoscrolls(false);
         fieldFechaEvento.setBorder(null);
 
         labelPagoAdicional.setFont(new java.awt.Font("Comic Sans MS", 1, 12)); // NOI18N
-        labelPagoAdicional.setForeground(new java.awt.Color(0, 0, 204));
+        labelPagoAdicional.setForeground(new java.awt.Color(83, 83, 255));
         labelPagoAdicional.setText("avisopagoadicional");
 
         javax.swing.GroupLayout panelComprarLayout = new javax.swing.GroupLayout(panelComprar);
@@ -1321,10 +1931,6 @@ public class ventanaComprar extends javax.swing.JPanel {
                                 .addGroup(panelComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(fieldCelular, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
                                     .addComponent(fieldDireccion)))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, panelComprarLayout.createSequentialGroup()
-                                .addGap(122, 122, 122)
-                                .addComponent(jButton2)
-                                .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(panelComprarLayout.createSequentialGroup()
                                 .addGroup(panelComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addGroup(panelComprarLayout.createSequentialGroup()
@@ -1354,8 +1960,13 @@ public class ventanaComprar extends javax.swing.JPanel {
                             .addComponent(fieldFechaEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE))))
             .addGroup(panelComprarLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(grafiquita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(panelComprarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(panelComprarLayout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(grafiquita, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(panelComprarLayout.createSequentialGroup()
+                        .addGap(142, 142, 142)
+                        .addComponent(jButton2)))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
         panelComprarLayout.setVerticalGroup(
@@ -1392,13 +2003,13 @@ public class ventanaComprar extends javax.swing.JPanel {
                 .addComponent(comboPunto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(fieldFechaEvento, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(77, 77, 77)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(comboPuntoVenta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 239, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
                 .addComponent(jButton2)
-                .addGap(34, 34, 34))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
 
         jScrollPane2.setViewportView(panelComprar);
@@ -1635,50 +2246,62 @@ public class ventanaComprar extends javax.swing.JPanel {
                 switch (medellin.showEspecifico) {
                     case "FUTBOL":
                         ventana1.vectorDatos[14]= ("Fecha: 7/09/2023  Hora7:00am");
+                        medDeporFutResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         break;
                     case "VOLEIBOL":
+                        medDeporVoleiResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 8/09/2023 Hora: 7:00am");
                         break;
                     case "TENNIS":
+                        medDeporTenisResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 9/09/2023 Hora: 7:00am");
                         break;
                     case "SANTA CLAUS":
+                        medTeaSantaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 6/10/2023 Hora: 7:00pm");
                         break;
                     case "CIEN AÑOS DE SOLEDAD":
+                        medTea100SoledadResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 9/10/2023 Hora: 7:00pm");
                         break;
                     case "OPERA":
+                        medTeaOperaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 12/10/2023 Hora: 7:00pm");
                         break;
                     case "SILVESTRE DANGOND":
+                        medConcieSilvesResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 9/08/2023 Hora 9:00pm");
-               
                         break;
                     case "MALUMA":
+                        medConcieMaluResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 10/08/2023 Hora 9:00pm");
-                    
                         break;
                     case "BAD BUNNY":
+                        medConcieBadResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 11/08/2023 Hora 9:00pm");
-                  
                         break;
                     case "PYTHON 2.0":
+                        medConfePyhtonResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 20/06/2023 Hora: 9:00am");
                         break;
                     case "APRENDE TRAIDING":
+                        medConfeTradingResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 21/06/2023 Hora: 9:00am");
                         break;
                     case "CRISTO ESTA AQUI":
+                        medConfeCristoResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 22/06/2023 Hora: 9:00am");
                         break;
                     case "LA MONA LISA":
+                        medExpoMonaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 2/07/2023 Hora: 4:00pm");
                         break;
                     case "LA MOMIA":
+                        medExpoMomiaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 3/07/2023 Hora: 4:00pm");
                         break;
                     case "LA ULTIMA CENA":
+                        medExpoUltimaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 4/07/2023 Hora: 4:00pm");
                         break;
                 }
@@ -1687,51 +2310,66 @@ public class ventanaComprar extends javax.swing.JPanel {
                   //fecha dependiendo del evento
                  switch (medellin.showEspecifico) {
                     case "FUTBOL":
+                        quillaDeporFutResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 20/09/2023 Hora: 7:00am");
                         break;
                     case "VOLEIBOL":
+                        quillaDeporVoleiResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 21/09/2023 Hora: 7:00am");
                         break;
                     case "TENNIS":
+                        quillaDeporTenisResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 22/09/2023 Hora: 7:00am");
                         break;
                     case "SANTA CLAUS":
+                        quillaTeaSantaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 20/10/2023 Hora: 7:00pm");
                         break;
                     case "CIEN AÑOS DE SOLEDAD":
+                        quillaTea100SoledadResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 22/10/2023 Hora: 7:00pm");
                         break;
                     case "OPERA":
+                        quillaTeaOperaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 23/10/2023 Hora: 7:00pm");
                         break;
                     case "SILVESTRE DANGOND":
+                        quillaConcieSilvesResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 27/08/2023 Hora 9:00pm");
            
                         break;
                     case "MALUMA":
+                        quillaConcieMaluResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 28/08/2023 Hora 9:00pm");
                    
                         break;
                     case "BAD BUNNY":
+                        quillaConcieBadResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 29/08/2023 Hora 9:00pm");
                  
                         break;
                     case "PYTHON 2.0":
+                        quillaConfePythonResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 10/06/2023 Hora: 9:00am");
                         break;
                     case "APRENDE TRAIDING":
+                        quillaConfeTradingResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 11/06/2023 Hora: 9:00am");
                         break;
                     case "CRISTO ESTA AQUI":
+                        quillaConfeCristoResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 12/06/2023 Hora: 9:00am");
                         break;
                     case "LA MONA LISA":
+                        quillaExpoMonaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 13/07/2023 Hora: 4:00pm");
                         break;
                     case "LA MOMIA":
+                        quillaExpoMomiaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 14/07/2023 Hora: 4:00pm");
                         break;
                     case "LA ULTIMA CENA":
+                        quillaExpoUltimaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 15/07/2023 Hora: 4:00pm");
                         break;
                 }
@@ -1740,87 +2378,155 @@ public class ventanaComprar extends javax.swing.JPanel {
                   //fecha dependiendo del evento
                  switch (medellin.showEspecifico) {
                     case "FUTBOL":
+                        bogoDeporFutResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 13/09/2023 Hora: 7:00am'");
                         break;
                     case "VOLEIBOL":
+                        bogoDeporVoleiResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 14/09/2023 Hora: 7:00am");
                         break;
                     case "TENNIS":
+                        bogoDeporTenisResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 15/09/2023 Hora: 7:00am");
                         break;
                     case "SANTA CLAUS":
+                        bogoTeaSantaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 27/10/2023 Hora: 7:00pm");
                         break;
                     case "CIEN AÑOS DE SOLEDAD":
+                        bogoTea100SoledadResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 28/10/2023 Hora: 7:00pm");
                         break;
                     case "OPERA":
+                        bogoTeaOperaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 29/10/2023 Hora: 7:00pm");
                         break;
                     case "SILVESTRE DANGOND":
+                        bogoConcieSilvesResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 15/08/2023 Hora 9:00pm");
                      
                         break;
                     case "MALUMA":
+                        bogoConcieMaluResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 17/08/2023 Hora 9:00pm");
                
                         break;
                     case "BAD BUNNY":
+                        bogoConcieBadResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 18/08/2023 Hora 9:00pm");
                     
                         break;
                     case "PYTHON 2.0":
+                        bogoConfePythonResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 1/06/2023 Hora: 9:00am");
                         break;
                     case "APRENDE TRAIDING":
+                        bogoConfeTradingResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 2/06/2023 Hora: 9:00am");
                         break;
                     case "CRISTO ESTA AQUI":
+                        bogoConfeCristoResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 2/06/2023 Hora: 9:00am");
                         break;
                     case "LA MONA LISA":
+                        bogoExpoMonaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 22/07/2023 Hora: 4:00pm");
                         break;
                     case "LA MOMIA":
+                        bogoExpoMomiaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 23/07/2023 Hora: 4:00pm");
                         break;
                     case "LA ULTIMA CENA":
+                        bogoExpoUltimaResta=Integer.parseInt(ventana1.vectorDatos[10]);
                         ventana1.vectorDatos[14]= ("Fecha: 24/07/2023 Hora: 4:00pm");
                         break;
                 }
                 break;
         }
-        JOptionPane.showMessageDialog(null, "Precio total: "+ ventana1.vectorDatos[11]);
-    
-        //necesitamos declarar las variables que me permitiran escribir el archivo.
+        //corroboramos que el usuario si halla seleccionado una opcion(comprar o reservar)
         try {
-            //si le agregamsos ,true sobreescribe el archivo
-            FileWriter arch_totales = new FileWriter("C:/Users/Johan Choles/Desktop/logica/proLog/datos.csv");
-            PrintWriter linea_imp = new PrintWriter(arch_totales);
+            if (checkComprar.isSelected() == false && checkReservar.isSelected() == false) {
+                JOptionPane.showMessageDialog(null, "POR FAVOR ELIJA UNA OPCION");
+            } else if (checkDomicilio.isSelected() == true && checkComprar.isSelected() == false) {
+                JOptionPane.showMessageDialog(null, "POR FAVOR ELIJA UNA OPCION");
+            } else if (checkReservar.isSelected() == true || checkComprar.isSelected() == true) {
+                if (Integer.parseInt(ventana1.vectorDatos[10]) == 0) {
+                    JOptionPane.showMessageDialog(null, "POR FAVOR SELECCIONE UNA CANTIDAD DE BOLETAS");
+                } else {
+                    //las personas se arrepienten
+                    int seguro = -1, arrepentido;
+                    arrepentido = JOptionPane.showConfirmDialog(null, "¿Seguro que desea realizar la compra?");
+                    
+                    if (arrepentido == JOptionPane.YES_OPTION) {
+                        //si el usuario seleccione que si desea comprar:
+                        
+                        //necesitamos declarar las variables que me permitiran escribir el archivo.
+                        //si le agregamsos ,true sobreescribe el archivo
+                        FileWriter arch_totales = new FileWriter("C:/Users/Johan Choles/Desktop/logica/proLog/datos.csv", true);
+                        PrintWriter linea_imp = new PrintWriter(arch_totales);
 
-            contadorQuemado = 0;
-            if (contadorQuemado < 1) {
-                for (byte i = 0; i < 15; i++) {
-                    linea_imp.print(ventana1.datosQuemados[i] + ";");
+//                        contadorQuemado = 0;
+                        if (contadorQuemado < 1 ) {
+                            for (byte i = 0; i < 15; i++) {
+                                linea_imp.print(ventana1.datosQuemados[i] + ";");
+                            }
+                            linea_imp.println("");
+                            contadorQuemado++;
+                        }if (contadorQuemadoSeguir >= 1) {
+                            //recorremos el vector datos
+                            for (byte i = 0; i < 15; i++) {
+                                linea_imp.print(ventana1.vectorDatos[i] + ";");
+                            }
+                            linea_imp.println("");
+                            linea_imp.close();
+                            JOptionPane.showMessageDialog(null, "GRACIAS POR SU COMPRA, " + ventana2.dato + ".\nLe llegara a su correo: "
+                                    + ventana1.vectorDatos[2] + " los datos sobre su compra.");
+                            contadorQuemadoSeguir++;
+                            
+                            //RESTAMOS LAS BOLETAS COMPRADAS
+                            
+                            sigaComprando();
+                        }
+                    }
                 }
-                linea_imp.println("");
-                contadorQuemado++;
-                //recorremos el vector datos
-                for (byte i = 0; i < 15; i++) {
-                    linea_imp.print(ventana1.vectorDatos[i] + ";");
-                }
-                linea_imp.close();
-
             }
-
+            
         } catch (Exception e) {
             System.out.println("Error llenando el archivo:" + e);
         }
-
-        //creamos un contador que me permitira iniciar los datos quemados para el archivo
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    //funcion cambiar ventana
+    public void sigaComprando() {
+        // cambiar ventana para que siga comprando
+        if (ventana2.ciudadEspecifica.equals("medellin")) {
+            ventanaEspectaculo vent1 = new ventanaEspectaculo();
+            vent1.setSize(398, 470);
+
+            jScrollPane2.removeAll();
+            jScrollPane2.add(vent1);
+            jScrollPane2.revalidate();
+            jScrollPane2.repaint();
+        } else if (ventana2.ciudadEspecifica.equals("barranquilla")) {
+            ventanaEspectaculo vent1 = new ventanaEspectaculo();
+            vent1.setSize(398, 470);
+
+            jScrollPane2.removeAll();
+            jScrollPane2.add(vent1);
+            jScrollPane2.revalidate();
+            jScrollPane2.repaint();
+        } else if (ventana2.ciudadEspecifica.equals("bogota")) {
+            ventanaEspectaculo vent1 = new ventanaEspectaculo();
+            vent1.setSize(398, 470);
+
+            jScrollPane2.removeAll();
+            jScrollPane2.add(vent1);
+            jScrollPane2.revalidate();
+            jScrollPane2.repaint();
+        }
+    }
+    
     private void comboPuntoVentaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboPuntoVentaActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_comboPuntoVentaActionPerformed

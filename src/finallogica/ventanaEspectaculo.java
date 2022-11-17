@@ -19,6 +19,48 @@ public class ventanaEspectaculo extends javax.swing.JPanel {
     private static byte valorVerdad;
     public ventanaEspectaculo() {
         initComponents();
+         //verificamos que el usuario no halla comprado boletas
+          switch (ventana2.ciudadEspecifica) {
+            case "medellin":
+                if (ventanaComprar.medDeporFutResta == 5 || ventanaComprar.medDeporTenisResta == 5 || ventanaComprar.medDeporVoleiResta == 5) {
+                    jComboBoxDEPORTE.setEnabled(false);
+                } else if (ventanaComprar.medTea100SoledadResta == 5 || ventanaComprar.medTeaOperaResta == 5 || ventanaComprar.medTeaSantaResta == 5) {
+                    jComboBoxTEATRO.setEnabled(false);
+                } else if (ventanaComprar.medConcieBadResta == 5 || ventanaComprar.medConcieMaluResta == 5 || ventanaComprar.medConcieSilvesResta == 5) {
+                    jComboBoxCONCIERTO.setEnabled(false);
+                } else if (ventanaComprar.medConfeCristoResta == 5 || ventanaComprar.medConfePyhtonResta == 5 || ventanaComprar.medConfeTradingResta == 5) {
+                    jComboBoxCONFERENCIAS.setEnabled(false);
+                } else if (ventanaComprar.medExpoMomiaResta == 5 || ventanaComprar.medExpoMonaResta == 5 || ventanaComprar.medExpoUltimaResta == 5) {
+                    jComboBoxEXPOSICIONES.setEnabled(false);
+                }
+                break;
+            case "barranquilla":
+                if (ventanaComprar.quillaDeporFutResta == 5 || ventanaComprar.quillaDeporTenisResta == 5 || ventanaComprar.quillaDeporVoleiResta == 5) {
+                    jComboBoxDEPORTE.setEnabled(false);
+                } else if (ventanaComprar.quillaTea100SoledadResta == 5 || ventanaComprar.quillaTeaOperaResta == 5 || ventanaComprar.quillaTeaSantaResta == 5) {
+                    jComboBoxTEATRO.setEnabled(false);
+                } else if (ventanaComprar.quillaConcieBadResta == 5 || ventanaComprar.quillaConcieMaluResta == 5 || ventanaComprar.quillaConcieSilvesResta == 5) {
+                    jComboBoxCONCIERTO.setEnabled(false);
+                } else if (ventanaComprar.quillaConfeCristoResta == 5 || ventanaComprar.quillaConfePythonResta == 5 || ventanaComprar.quillaConfeTradingResta == 5) {
+                    jComboBoxCONFERENCIAS.setEnabled(false);
+                } else if (ventanaComprar.quillaExpoMomiaResta == 5 || ventanaComprar.quillaExpoMonaResta == 5 || ventanaComprar.quillaExpoUltimaResta == 5) {
+                    jComboBoxEXPOSICIONES.setEnabled(false);
+                }
+                break;
+            case "bogota":
+                if (ventanaComprar.bogoDeporFutResta == 5 || ventanaComprar.bogoDeporTenisResta == 5 || ventanaComprar.bogoDeporVoleiResta == 5) {
+                    jComboBoxDEPORTE.setEnabled(false);
+                } else if (ventanaComprar.bogoTea100SoledadResta == 5 || ventanaComprar.bogoTeaOperaResta == 5 || ventanaComprar.bogoTeaSantaResta == 5) {
+                    jComboBoxTEATRO.setEnabled(false);
+                } else if (ventanaComprar.bogoConcieBadResta == 5 || ventanaComprar.bogoConcieMaluResta == 5 || ventanaComprar.bogoConcieSilvesResta == 5) {
+                    jComboBoxCONCIERTO.setEnabled(false);
+                } else if (ventanaComprar.bogoConfeCristoResta == 5 || ventanaComprar.bogoConfePythonResta == 5 || ventanaComprar.bogoConfeTradingResta == 5) {
+                    jComboBoxCONFERENCIAS.setEnabled(false);
+                } else if (ventanaComprar.bogoExpoMomiaResta == 5 || ventanaComprar.bogoExpoMonaResta == 5 || ventanaComprar.bogoExpoUltimaResta == 5) {
+                    jComboBoxEXPOSICIONES.setEnabled(false);
+                }
+                break;
+        }
     }
 
     /**
@@ -47,7 +89,7 @@ public class ventanaEspectaculo extends javax.swing.JPanel {
         ventana2_1.setBackground(new java.awt.Color(173, 189, 252));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel2.setForeground(new java.awt.Color(255, 158, 50));
         jLabel2.setText("ESPECTACULOS");
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N

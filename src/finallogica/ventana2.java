@@ -22,7 +22,7 @@ public class ventana2 extends javax.swing.JFrame {
     /**
      * Creates new form ventana2
      */
-    private String dato;
+    public static String dato;
     public static String ciudadEspecifica;
     public ventana2() {
         initComponents();
@@ -120,13 +120,13 @@ public class ventana2 extends javax.swing.JFrame {
         setTitle("SHOWTICKET");
         setResizable(false);
 
-        jPanel1.setBackground(new java.awt.Color(0, 0, 0));
+        jPanel1.setBackground(new java.awt.Color(125, 147, 242));
 
-        jPanel2.setBackground(new java.awt.Color(0, 51, 255));
+        jPanel2.setBackground(new java.awt.Color(129, 152, 249));
 
-        TBmedellin.setBackground(new java.awt.Color(0, 52, 255));
+        TBmedellin.setBackground(new java.awt.Color(129, 152, 249));
         TBmedellin.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        TBmedellin.setForeground(new java.awt.Color(255, 255, 51));
+        TBmedellin.setForeground(new java.awt.Color(255, 158, 50));
         TBmedellin.setSelected(true);
         TBmedellin.setText("Medellín");
         TBmedellin.setBorder(null);
@@ -137,9 +137,9 @@ public class ventana2 extends javax.swing.JFrame {
             }
         });
 
-        TBbarranquilla.setBackground(new java.awt.Color(0, 51, 255));
+        TBbarranquilla.setBackground(new java.awt.Color(129, 152, 249));
         TBbarranquilla.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        TBbarranquilla.setForeground(new java.awt.Color(255, 255, 51));
+        TBbarranquilla.setForeground(new java.awt.Color(255, 158, 50));
         TBbarranquilla.setText("Barranquilla");
         TBbarranquilla.setToolTipText("");
         TBbarranquilla.setBorder(null);
@@ -151,9 +151,9 @@ public class ventana2 extends javax.swing.JFrame {
             }
         });
 
-        TBbogotá.setBackground(new java.awt.Color(0, 51, 255));
+        TBbogotá.setBackground(new java.awt.Color(129, 152, 249));
         TBbogotá.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
-        TBbogotá.setForeground(new java.awt.Color(255, 255, 51));
+        TBbogotá.setForeground(new java.awt.Color(255, 158, 50));
         TBbogotá.setText("Bogotá");
         TBbogotá.setBorder(null);
         TBbogotá.setBorderPainted(false);
@@ -165,7 +165,7 @@ public class ventana2 extends javax.swing.JFrame {
         });
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 14)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel2.setForeground(new java.awt.Color(234, 145, 45));
         jLabel2.setText("mensajeBienve");
         jLabel2.addAncestorListener(new javax.swing.event.AncestorListener() {
             public void ancestorAdded(javax.swing.event.AncestorEvent evt) {
@@ -180,7 +180,7 @@ public class ventana2 extends javax.swing.JFrame {
         icon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/logoeste-removebg-preview.png"))); // NOI18N
         icon.setText("jLabel2");
 
-        jButton1.setBackground(new java.awt.Color(0, 51, 255));
+        jButton1.setBackground(new java.awt.Color(129, 152, 249));
         jButton1.setFont(new java.awt.Font("Berlin Sans FB", 0, 18)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 0, 0));
         jButton1.setText("SALIR");
@@ -248,7 +248,7 @@ public class ventana2 extends javax.swing.JFrame {
         content.setLayout(contentLayout);
         contentLayout.setHorizontalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 848, Short.MAX_VALUE)
         );
         contentLayout.setVerticalGroup(
             contentLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

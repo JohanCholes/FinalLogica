@@ -21,6 +21,7 @@ public class medellin extends javax.swing.JPanel {
     public static String eventoGrafica;
     public medellin() {
         initComponents();
+
 //        setImageLabel(imgMedellín, "src/imagenes/imagenMedellín.jpg");
     }
 
@@ -56,20 +57,21 @@ public class medellin extends javax.swing.JPanel {
         jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Berlin Sans FB", 0, 38)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 158, 50));
         jLabel1.setText("MEDELLÍN");
         jPanel1.add(jLabel1);
         jLabel1.setBounds(135, 29, 183, 42);
 
         imgMedellín.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/imagenMedellín.jpg"))); // NOI18N
         imgMedellín.setText("imagenMedellín");
-        imgMedellín.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        imgMedellín.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 158, 50), 2, true));
         jPanel1.add(imgMedellín);
         imgMedellín.setBounds(57, 106, 340, 303);
 
         ventana2_1.setBackground(new java.awt.Color(173, 189, 252));
 
         jLabel2.setFont(new java.awt.Font("Berlin Sans FB", 0, 28)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 102));
+        jLabel2.setForeground(new java.awt.Color(255, 158, 50));
         jLabel2.setText("ESPECTACULOS");
 
         jLabel3.setFont(new java.awt.Font("Berlin Sans FB", 0, 22)); // NOI18N
@@ -117,9 +119,6 @@ public class medellin extends javax.swing.JPanel {
         ventana2_1Layout.setHorizontalGroup(
             ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(68, 68, 68)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(ventana2_1Layout.createSequentialGroup()
                 .addGap(6, 6, 6)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(54, 54, 54)
@@ -147,13 +146,16 @@ public class medellin extends javax.swing.JPanel {
             .addGroup(ventana2_1Layout.createSequentialGroup()
                 .addGap(96, 96, 96)
                 .addComponent(bAceptar))
+            .addGroup(ventana2_1Layout.createSequentialGroup()
+                .addGap(70, 70, 70)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         ventana2_1Layout.setVerticalGroup(
             ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ventana2_1Layout.createSequentialGroup()
-                .addGap(25, 25, 25)
+                .addGap(69, 69, 69)
                 .addComponent(jLabel2)
-                .addGap(75, 75, 75)
+                .addGap(31, 31, 31)
                 .addGroup(ventana2_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jComboBoxDEPORTE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

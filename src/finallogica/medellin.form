@@ -39,6 +39,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Berlin Sans FB" size="38" style="0"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="32" green="9e" red="ff" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="MEDELL&#xcd;N"/>
           </Properties>
           <Constraints>
@@ -55,7 +58,9 @@
             <Property name="text" type="java.lang.String" value="imagenMedell&#xed;n"/>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
-                <LineBorder thickness="2"/>
+                <LineBorder roundedCorners="true" thickness="2">
+                  <Color PropertyName="color" blue="32" green="9e" red="ff" type="rgb"/>
+                </LineBorder>
               </Border>
             </Property>
           </Properties>
@@ -80,10 +85,6 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="68" pref="68" max="-2" attributes="0"/>
-                      <Component id="jLabel2" min="-2" pref="205" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
                       <Component id="jLabel3" min="-2" pref="131" max="-2" attributes="0"/>
@@ -118,14 +119,18 @@
                       <EmptySpace min="-2" pref="96" max="-2" attributes="0"/>
                       <Component id="bAceptar" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
+                      <Component id="jLabel2" min="-2" pref="205" max="-2" attributes="0"/>
+                  </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="75" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
                           <Component id="jComboBoxDEPORTE" min="-2" max="-2" attributes="0"/>
@@ -163,7 +168,7 @@
                   <Font name="Berlin Sans FB" size="28" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="66" green="ff" red="ff" type="rgb"/>
+                  <Color blue="32" green="9e" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="ESPECTACULOS"/>
               </Properties>
